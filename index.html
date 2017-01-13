@@ -98,6 +98,79 @@
         <div class="col-sm-8 blog-main">
             
   
+    <article id="post-我好像发现了PRC为什么连接海外速度那么慢的秘密了" class="article article-type-post" itemscope
+         itemprop="blogPost">
+
+    <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017-01-13/我好像发现了PRC为什么连接海外速度那么慢的秘密了.html">我好像发现了PRC为什么连接海外速度那么慢的秘密了</a>
+    </h1>
+  
+
+
+    </header>
+
+    <div class="article-meta">
+        <div class="article-datetime">
+  <a href="/2017-01-13/我好像发现了PRC为什么连接海外速度那么慢的秘密了.html" class="article-date"><time datetime="2017-01-13T07:48:20.000Z" itemprop="datePublished">2017-01-13</time></a>
+</div>
+
+        
+        <div class="article-author">刘博平</div>
+        
+        
+
+    </div>
+    <div class="article-inner">
+
+        <div class="article-entry" itemprop="articleBody">
+            
+            <h3 id="原因就是运营商也要买出口带宽，为了节省成本所以就买了一个你感受到的小水管。"><a href="#原因就是运营商也要买出口带宽，为了节省成本所以就买了一个你感受到的小水管。" class="headerlink" title="原因就是运营商也要买出口带宽，为了节省成本所以就买了一个你感受到的小水管。"></a>原因就是运营商也要买出口带宽，为了节省成本所以就买了一个你感受到的小水管。</h3><h2 id="推理分析Why？"><a href="#推理分析Why？" class="headerlink" title="推理分析Why？"></a>推理分析Why？</h2><p>我们先看下百度百科<a href="http://baike.baidu.com/view/5316667.htm" target="_blank" rel="external">美国PR机房</a>，里面写着<code>与大陆电信直连</code>。再看看另外一个关键字<code>kr机房</code>，说的就更详细了，<a href="http://www.idcwk.com/us/kt/" target="_blank" rel="external">美国KT机房是最早对中国提供服务的美国机房</a>，由此我们可以推测一个完整的路由线路：PRC的网络通过光缆出海，到达KT、PR两个机房，然后再访问目的网站，问题就出在这个机房里面，运营商是向机房买了多少带宽呢？不知道。这点我们不难理解，200x年的时候，游戏服务器都是分电信、联通的，北方玩家玩电信服务器的游戏，会特别卡，原因就在于2大运营商要向对方支付巨额宽带费用，而部分二级机房偷偷做了路由，又被禁止。同理今天，我们访问github、Maven、pip……这些特别卡，原因是一样的。</p>
+<h2 id="怎么办How？"><a href="#怎么办How？" class="headerlink" title="怎么办How？"></a>怎么办How？</h2><p>像上面那些二级机房一样，买KT、PR两个机房的服务器进行中转。因为你的中转服务器和运营商的服务器在一个机房内，是不算运营商的带宽费用的。</p>
+<ul>
+<li><a href="https://www.krypt.com/" target="_blank" rel="external">kt机房</a></li>
+<li><a href="https://www.quadranet.com/" target="_blank" rel="external">pr机房</a></li>
+</ul>
+<blockquote>
+<p>上面2个机房价格比较高，不太适合个人购买，个人可以选择将机房搭建在这两个机房的VPS提供商。我分享一个我找到的这样的VPS提供商，该VPS不但提供位置在PR机房的VPS，还支持支付宝付款。</p>
+</blockquote>
+<p><code>注意：不是所有的套餐都直连，要按照下面的步骤找到。</code></p>
+<ol>
+<li><a href="http://t.cn/RMJsF2z" target="_blank" rel="external">点击进入VPS官网</a></li>
+<li>进去之后，先注册并登录</li>
+<li>进入 “client area” ，再进入“ Services ”，“ Order new Services ”</li>
+<li>然后就看到第一个和第二个套餐，都带有“ LOS ANGELES - CHINA DIRECT ROUTE ”字样的，意思就是洛杉矶中国直连。</li>
+<li>然后就可以“ Order Now ”，下单，用支付宝付款了。</li>
+</ol>
+<h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p>无任何优化，在公司看油管4K稍有卡顿，1080P没事，速度大概8000kb的样子。</p>
+
+            
+        </div>
+
+        
+        
+
+        
+
+        <footer class="article-footer">
+            
+            
+            <a href="http://www.liuboping.com/2017-01-13/我好像发现了PRC为什么连接海外速度那么慢的秘密了.html#disqus_thread" class="article-comment-link">
+                <i class="fa fa-comment"></i> Comments
+            </a>
+            
+            
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+  
     <article id="post-京东主机" class="article article-type-post" itemscope
          itemprop="blogPost">
 
@@ -553,7 +626,7 @@
         <li><a href="http://union-click.jd.com/jdc?d=tHqlJ8" target="_blank">
                 机器学习 击败AlphaGo的武林秘籍</a></li>
         <li><a href="http://union-click.jd.com/jdc?d=Nmcud1" target="_blank">
-                <img src="http://img30.360buyimg.com/ads/jfs/t3616/264/1740932354/45457/6df7a79/582e7d85N43357868.png"
+                <img src="http://wx2.sinaimg.cn/large/0060hWkWly1fbp26f4da6j30a008cdgs.jpg"
                      alt="京东云主机"></a></li>
     </ul>
 </div>
@@ -588,7 +661,7 @@
   
   <div class="sidebar-module">
     <h4>归档</h4>
-    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/01/">一月 2017</a><span class="sidebar-module-list-count">7</span></li></ul>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/01/">一月 2017</a><span class="sidebar-module-list-count">8</span></li></ul>
   </div>
 
 
@@ -597,6 +670,10 @@
   <div class="sidebar-module">
     <h4>最新文章</h4>
     <ul class="sidebar-module-list">
+      
+        <li>
+          <a href="/2017-01-13/我好像发现了PRC为什么连接海外速度那么慢的秘密了.html">我好像发现了PRC为什么连接海外速度那么慢的秘密了</a>
+        </li>
       
         <li>
           <a href="/2017-01-12/京东主机.html">怎样通过租用京东云主机搭建一个高性能高可用的网站</a>
@@ -612,10 +689,6 @@
       
         <li>
           <a href="/2017-01-11/PHP给多维数组赋值避免notice警告.html">PHP给多维数组赋值避免notice警告</a>
-        </li>
-      
-        <li>
-          <a href="/2017-01-11/php模仿tail实现读取log文件.html">php模仿tail实现读取log文件</a>
         </li>
       
     </ul>
