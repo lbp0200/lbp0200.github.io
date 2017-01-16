@@ -5,19 +5,32 @@
     
     <title>
         
-        Tag: 云计算 |
+        怎样使用Hexo像WordPress那样在线可视化写博客 |
         
         刘博平的部落格</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="VPS，电脑主机，视频转码，无线路由器，PHP，Python，数据库">
-<meta property="og:type" content="website">
-<meta property="og:title" content="刘博平的部落格">
-<meta property="og:url" content="http://www.liuboping.com/tags/云计算/index.html">
+    <meta name="description" content="Hexo有一款插件hexo-admin即可轻松实现，地址：(https://github.com/jaredly/hexo-admin)它能够管理文章，添加分类和标签，也可以一键部署。只需访问: http://localhost:4000/admin，即可完成所有操作。
+这里重点说说一键部署
+
+首先配置_config.yml，新增
+12admin:  deployCommand: &apos;sh ./he">
+<meta property="og:type" content="article">
+<meta property="og:title" content="怎样使用Hexo像WordPress那样在线可视化写博客">
+<meta property="og:url" content="http://www.liuboping.com/2017-01-16/怎样使用Hexo像WordPress那样在线可视化写博客.html">
 <meta property="og:site_name" content="刘博平的部落格">
-<meta property="og:description" content="VPS，电脑主机，视频转码，无线路由器，PHP，Python，数据库">
+<meta property="og:description" content="Hexo有一款插件hexo-admin即可轻松实现，地址：(https://github.com/jaredly/hexo-admin)它能够管理文章，添加分类和标签，也可以一键部署。只需访问: http://localhost:4000/admin，即可完成所有操作。
+这里重点说说一键部署
+
+首先配置_config.yml，新增
+12admin:  deployCommand: &apos;sh ./he">
+<meta property="og:updated_time" content="2017-01-16T06:36:33.148Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="刘博平的部落格">
-<meta name="twitter:description" content="VPS，电脑主机，视频转码，无线路由器，PHP，Python，数据库">
+<meta name="twitter:title" content="怎样使用Hexo像WordPress那样在线可视化写博客">
+<meta name="twitter:description" content="Hexo有一款插件hexo-admin即可轻松实现，地址：(https://github.com/jaredly/hexo-admin)它能够管理文章，添加分类和标签，也可以一键部署。只需访问: http://localhost:4000/admin，即可完成所有操作。
+这里重点说说一键部署
+
+首先配置_config.yml，新增
+12admin:  deployCommand: &apos;sh ./he">
     
     <link rel="alternate" href="/atom.xml" title="刘博平的部落格" type="application/atom+xml">
     
@@ -98,41 +111,96 @@
 
     <div class="row">
         <div class="col-sm-8 blog-main">
-            
+            <article id="post-怎样使用Hexo像WordPress那样在线可视化写博客" class="article article-type-post" itemscope
+         itemprop="blogPost">
+
+    <header class="article-header">
+        
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <header class="archive-article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017-01-12/京东主机.html">怎样通过租用京东云主机搭建一个高性能高可用的网站</a>
+    <h1 class="article-title" itemprop="name">
+      怎样使用Hexo像WordPress那样在线可视化写博客
     </h1>
   
 
 
-    <div class="article-datetime">
-  <a href="/2017-01-12/京东主机.html" class="archive-article-date"><time datetime="2017-01-12T08:56:00.000Z" itemprop="datePublished">一月 12日</time></a>
+    </header>
+
+    <div class="article-meta">
+        <div class="article-datetime">
+  <a href="/2017-01-16/怎样使用Hexo像WordPress那样在线可视化写博客.html" class="article-date"><time datetime="2017-01-16T06:24:40.000Z" itemprop="datePublished">2017-01-16</time></a>
 </div>
 
-  </header>
+        
+        <div class="article-author">刘博平</div>
+        
+        
+
+    </div>
+    <div class="article-inner">
+
+        <div class="article-entry" itemprop="articleBody">
+            
+            <p>Hexo有一款插件<code>hexo-admin</code>即可轻松实现，地址：(<a href="https://github.com/jaredly/hexo-admin" target="_blank" rel="external">https://github.com/jaredly/hexo-admin</a>)<br>它能够管理文章，添加分类和标签，也可以一键部署。<br>只需访问: <a href="http://localhost:4000/admin" target="_blank" rel="external">http://localhost:4000/admin</a>，即可完成所有操作。</p>
+<p>这里重点说说<code>一键部署</code></p>
+<ol>
+<li><p>首先配置<code>_config.yml</code>，新增</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="attr">admin:</span></div><div class="line"><span class="attr">  deployCommand:</span> <span class="string">'sh ./hexo-deploy.sh'</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>新增<code>hexo-deploy.sh</code>文件，内容如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/env sh</div><div class="line">rm -rf public</div><div class="line">hexo deploy --generate</div></pre></td></tr></table></figure>
+</li>
+<li><p>最后，写完博客，点<code>Deploy</code>-<code>deploy</code>，就轻松地把新博文发布啦。</p>
+</li>
+</ol>
+
+            
+        </div>
+
+        
+        
+
+        
+
+        <footer class="article-footer">
+            
+            
+            <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+            
+            
+            <a href="http://www.liuboping.com/2017-01-16/怎样使用Hexo像WordPress那样在线可视化写博客.html#disqus_thread" class="article-comment-link">
+                <i class="fa fa-comment"></i> Comments
+            </a>
+            
+            
+
+        </footer>
+    </div>
+    
+    
+<ul id="article-nav" class="nav nav-pills nav-justified">
+  
+  <li role="presentation">
+    <a href="/2017-01-16/linux发行版哪个好.html" id="article-nav-older" class="article-nav-link-wrap">
+      <i class="fa fa-chevron-left pull-left"></i>
+      <span class="article-nav-link-title">linux发行版哪个好</span>
+    </a>
+  </li>
+  
+  
+</ul>
+
+
+    
 </article>
 
-  
-  
-    </div></section>
-  
 
+<section id="comments">
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by
+                Disqus.</a></noscript>
+    </div>
+</section>
 
 
 
@@ -238,11 +306,13 @@
 <script>
   var disqus_shortname = 'liu-bo-ping-de-bu-luo-ge';
   
+  var disqus_url = 'http://www.liuboping.com/2017-01-16/怎样使用Hexo像WordPress那样在线可视化写博客.html';
+  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>
