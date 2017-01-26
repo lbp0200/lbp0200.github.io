@@ -16,15 +16,22 @@
     </url>
 
     <url>
-        <loc>http://www.liuboping.com/tags/VPS/</loc>
+        <loc>http://www.liuboping.com/tags/%E5%8F%8C%E7%BA%BF%E4%B8%BB%E6%9C%BA/</loc>
         <lastmod>2017-01-25T05:35:17.180Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://www.liuboping.com/tags/%E5%8F%8C%E7%BA%BF%E4%B8%BB%E6%9C%BA/</loc>
-        <lastmod>2017-01-25T05:35:17.180Z</lastmod>
+        <loc>http://www.liuboping.com/tags/VPS/</loc>
+        <lastmod>2017-01-26T03:25:37.102Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.liuboping.com/tags/CN2/</loc>
+        <lastmod>2017-01-26T03:25:37.102Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
