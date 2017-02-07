@@ -1,3 +1,3 @@
-http://www.liuboping.com/2017-01-26/HostUS联通电信CN2线路直连美国洛杉矶VPS，搭建ss，轻松看4K油管.html
-http://www.liuboping.com/2017-01-20/拼了！李彦宏为了给百度打广告-把女儿都推出来了.html
-http://www.liuboping.com/2017-01-19/分享一个非常便宜的PHP-ASP-NET国内香港美国虚拟主机.html
+http://www.liuboping.com/2017-01-28/如何利用pdnsd和PRCDNS防止DNS劫持.html
+http://www.liuboping.com/2017-01-27/pdnsd配合PRCDNS搭建DNS防止DNS劫持.html
+http://www.liuboping.com/2017-01-27/AndroidStudio开发的电脑配置推荐.html

@@ -5,30 +5,26 @@
     
     <title>
         
-        HostUS联通电信CN2线路直连美国洛杉矶VPS，搭建ss，轻松看4K油管 |
+        如何利用pdnsd和PRCDNS防止DNS劫持 |
         
         刘博平的部落格</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="美国vps 支付宝，美国vps租用，美国vps评测，美国vps出租，美国vps推荐，美国vps 翻墙 哪个地区比较好，美国vps哪个比较好，vps国内访问速度最快，vps 翻墙，vps 翻墙软件。HostUS提供全球8个节点的VPS服务，最近支持了支付宝，搭建ss只要关注洛杉矶节点就好了。香港节点价格较贵，只有移动速度还行，电信绕行洛杉矶再到香港。
+    <meta name="description" content="防止运营商DNS劫持，DNS污染，DNS劫持怎么办，DNS污染怎么办，DNS污染怎么解决，DNS污染太严重
 
-HostUS官网HostUS洛杉矶节点有三条">
+DNS劫持主要是运营商以盈利为目的，进行的域名解析干扰，比如广告和强制使用缓存。几年前很多教程会告诉你使用OPENDNS或者114、百度、阿里的公共DNS来解决，运营商也提升了劫持技术，针对UDP协议，伪造DNS查询结果。目前DNS劫持主要针对UDP协议，TCP还没有被劫持，目前国内公共">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HostUS联通电信CN2线路直连美国洛杉矶VPS，搭建ss，轻松看4K油管">
-<meta property="og:url" content="http://www.liuboping.com/2017-01-26/HostUS联通电信CN2线路直连美国洛杉矶VPS，搭建ss，轻松看4K油管.html">
+<meta property="og:title" content="如何利用pdnsd和PRCDNS防止DNS劫持">
+<meta property="og:url" content="http://www.liuboping.com/2017-01-28/如何利用pdnsd和PRCDNS防止DNS劫持.html">
 <meta property="og:site_name" content="刘博平的部落格">
-<meta property="og:description" content="美国vps 支付宝，美国vps租用，美国vps评测，美国vps出租，美国vps推荐，美国vps 翻墙 哪个地区比较好，美国vps哪个比较好，vps国内访问速度最快，vps 翻墙，vps 翻墙软件。HostUS提供全球8个节点的VPS服务，最近支持了支付宝，搭建ss只要关注洛杉矶节点就好了。香港节点价格较贵，只有移动速度还行，电信绕行洛杉矶再到香港。
+<meta property="og:description" content="防止运营商DNS劫持，DNS污染，DNS劫持怎么办，DNS污染怎么办，DNS污染怎么解决，DNS污染太严重
 
-HostUS官网HostUS洛杉矶节点有三条">
-<meta property="og:image" content="http://wx2.sinaimg.cn/large/0060hWkWly1fc3v6dtt77j30fy08iab5.jpg">
-<meta property="og:image" content="http://wx3.sinaimg.cn/large/0060hWkWly1fc3v2q6nm3j30fz08k75e.jpg">
-<meta property="og:image" content="http://wx1.sinaimg.cn/large/0060hWkWly1fc3uqi3zjrj30nr0ddh0u.jpg">
+DNS劫持主要是运营商以盈利为目的，进行的域名解析干扰，比如广告和强制使用缓存。几年前很多教程会告诉你使用OPENDNS或者114、百度、阿里的公共DNS来解决，运营商也提升了劫持技术，针对UDP协议，伪造DNS查询结果。目前DNS劫持主要针对UDP协议，TCP还没有被劫持，目前国内公共">
 <meta property="og:updated_time" content="2017-02-03T01:24:58.512Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HostUS联通电信CN2线路直连美国洛杉矶VPS，搭建ss，轻松看4K油管">
-<meta name="twitter:description" content="美国vps 支付宝，美国vps租用，美国vps评测，美国vps出租，美国vps推荐，美国vps 翻墙 哪个地区比较好，美国vps哪个比较好，vps国内访问速度最快，vps 翻墙，vps 翻墙软件。HostUS提供全球8个节点的VPS服务，最近支持了支付宝，搭建ss只要关注洛杉矶节点就好了。香港节点价格较贵，只有移动速度还行，电信绕行洛杉矶再到香港。
+<meta name="twitter:title" content="如何利用pdnsd和PRCDNS防止DNS劫持">
+<meta name="twitter:description" content="防止运营商DNS劫持，DNS污染，DNS劫持怎么办，DNS污染怎么办，DNS污染怎么解决，DNS污染太严重
 
-HostUS官网HostUS洛杉矶节点有三条">
-<meta name="twitter:image" content="http://wx2.sinaimg.cn/large/0060hWkWly1fc3v6dtt77j30fy08iab5.jpg">
+DNS劫持主要是运营商以盈利为目的，进行的域名解析干扰，比如广告和强制使用缓存。几年前很多教程会告诉你使用OPENDNS或者114、百度、阿里的公共DNS来解决，运营商也提升了劫持技术，针对UDP协议，伪造DNS查询结果。目前DNS劫持主要针对UDP协议，TCP还没有被劫持，目前国内公共">
     
     
     
@@ -116,14 +112,14 @@ HostUS官网HostUS洛杉矶节点有三条">
 
     <div class="row">
         <div class="col-sm-8 blog-main">
-            <article id="post-HostUS联通电信CN2线路直连美国洛杉矶VPS，搭建ss，轻松看4K油管" class="article article-type-post" itemscope
+            <article id="post-如何利用pdnsd和PRCDNS防止DNS劫持" class="article article-type-post" itemscope
          itemprop="blogPost">
 
     <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      HostUS联通电信CN2线路直连美国洛杉矶VPS，搭建ss，轻松看4K油管
+      如何利用pdnsd和PRCDNS防止DNS劫持
     </h1>
   
 
@@ -132,7 +128,7 @@ HostUS官网HostUS洛杉矶节点有三条">
 
     <div class="article-meta">
         <div class="article-datetime">
-  <a href="/2017-01-26/HostUS联通电信CN2线路直连美国洛杉矶VPS，搭建ss，轻松看4K油管.html" class="article-date"><time datetime="2017-01-26T03:06:00.000Z" itemprop="datePublished">2017-01-26</time></a>
+  <a href="/2017-01-28/如何利用pdnsd和PRCDNS防止DNS劫持.html" class="article-date"><time datetime="2017-01-27T16:51:00.000Z" itemprop="datePublished">2017-01-28</time></a>
 </div>
 
         
@@ -146,21 +142,20 @@ HostUS官网HostUS洛杉矶节点有三条">
         <div class="article-entry" itemprop="articleBody">
             
             <blockquote>
-<p>美国vps 支付宝，美国vps租用，美国vps评测，美国vps出租，美国vps推荐，美国vps 翻墙 哪个地区比较好，美国vps哪个比较好，vps国内访问速度最快，vps 翻墙，vps 翻墙软件。<br>HostUS提供全球8个节点的VPS服务，最近支持了支付宝，搭建ss只要关注洛杉矶节点就好了。香港节点价格较贵，只有移动速度还行，电信绕行洛杉矶再到香港。</p>
+<p>防止运营商DNS劫持，DNS污染，DNS劫持怎么办，DNS污染怎么办，DNS污染怎么解决，DNS污染太严重</p>
 </blockquote>
-<h2 id="HostUS官网"><a href="#HostUS官网" class="headerlink" title="HostUS官网"></a><a href="https://my.hostus.us/aff.php?aff=1494" target="_blank" rel="external">HostUS官网</a></h2><h3 id="HostUS洛杉矶节点有三条线路"><a href="#HostUS洛杉矶节点有三条线路" class="headerlink" title="HostUS洛杉矶节点有三条线路"></a>HostUS洛杉矶节点有三条线路</h3><ul>
-<li>LAX01: Cogent, PCCW, GTT / Tinet and peering</li>
-<li>LAX02: 联通、电信CN2，只有KVM套餐，价格较贵 <code>Comcast, Hurricane Electric, PCCW, GTT / Tinet, Telia, China Telecom / CN2, China Unicom and peering</code></li>
-<li>LAX03: 联通、电信优化，支持OpenVZ套餐 <code>BBOI, PCCW, China Telecom, Cogent, GTT / Tinet, Zayo and peering</code></li>
-</ul>
-<h3 id="下面是测试地址："><a href="#下面是测试地址：" class="headerlink" title="下面是测试地址："></a>下面是测试地址：</h3><ul>
-<li><p>LAX02 KVM架构，亚洲优化线路，有CN2<br>IPv4 测试IP: 172.106.32.2<br>IPv6 测试IP: 2602:ffc5:50::1:5f8a<br>测试下载文件: <a href="http://la02-lg.hostus.us/10MB.test" target="_blank" rel="external">10MB</a> <a href="http://la02-lg.hostus.us/100MB.test" target="_blank" rel="external">100MB</a> <a href="http://la02-lg.hostus.us/500MB.test" target="_blank" rel="external">500MB</a><br>上海电信测试<br>ping <code>64 bytes from 172.106.32.2: icmp_seq=1 ttl=51 time=174 ms</code><br>wget下载10兆文件速度 <code>4.17M/s</code><br><img src="http://wx2.sinaimg.cn/large/0060hWkWly1fc3v6dtt77j30fy08iab5.jpg" alt="HostUS联通电信CN2线路直连美国洛杉矶VPS，搭建ss，轻松看4K油管"><br><strong>最低配置</strong>：<br>KVM架构（可以升级内核，安装锐速和BBR）<br>512MB 内存<br>25GB 硬盘<br>1 CPU<br>750GB 流量<br>1Gbps 带宽<br>1x IPv4<br>1x IPv6<br>价格：每月4.35USD，每年47.00USD<br>购买地址：<a href="https://my.hostus.us/aff.php?aff=1494&amp;pid=307" target="_blank" rel="external">https://my.hostus.us/aff.php?aff=1494&amp;pid=307</a></p>
+<p>DNS劫持主要是运营商以盈利为目的，进行的域名解析干扰，比如广告和强制使用缓存。几年前很多教程会告诉你使用OPENDNS或者114、百度、阿里的公共DNS来解决，运营商也提升了劫持技术，针对UDP协议，伪造DNS查询结果。目前DNS劫持主要针对UDP协议，TCP还没有被劫持，目前国内公共DNS支持TCP的也只有114，可以预见基于TCP协议的DNS查询应该没事，因为门槛高，用的人比较少。</p>
+<p>安装pdnsd，将DNS地址指向pdnsd所在的IP，让pdnsd通过TCP协议查询上游DNS，这样就避免了DNS劫持，上游服务器可以选择114、OPENDNS和PRCDNS，但是OPENDNS对CDN不友好，会把淘宝的图片CDN网址img.alicdn.com指向香港，所以不推荐使用。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>pdnsd不支持Windows，建议Windows用户使用UNbound。<br>pdnsd可以安装在<strong>openwrt</strong>（淘宝有刷好的几十元路由器）、<strong>树莓派</strong>（淘宝二手50元不带电源线）、<strong>x86的工控机小主机</strong>（淘宝上几十元可能买到），推荐后2种，路由器性能太低，可玩性不高。</p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>根据不同的需求，我推荐pdnsd的2种配置。</p>
+<ul>
+<li><p><strong>普通用户</strong><br>使用114DNS，114DNS还有其他功能<br>纯净 无劫持   无需再忍受被强扭去看广告或粗俗网站之痛苦<br>服务地址为：114.114.114.114 和 114.114.115.115<br>拦截 钓鱼病毒木马网站  增强网银、证券、购物、游戏、隐私信息安全<br>服务地址为：114.114.114.119 和 114.114.115.119<br>学校或家长可选拦截 色情网站  保护少年儿童免受网络色情内容的毒害<br>服务地址为：114.114.114.110 和 114.114.115.110<br>详见114DNS官网<br>下面是pdnsd的配置：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">global &#123;</div><div class="line">	perm_cache=2048;</div><div class="line">	cache_dir=<span class="string">"/var/cache/pdnsd"</span>;</div><div class="line">	run_as=<span class="string">"pdnsd"</span>;</div><div class="line">	server_ip = 0.0.0.0;  // Use eth0 here <span class="keyword">if</span> you want to allow other</div><div class="line">	server_port = 53;	// machines on your network to query pdnsd.</div><div class="line">	status_ctl = on;</div><div class="line">  	paranoid=on;</div><div class="line">	query_method=tcp_only;	// pdnsd must be compiled with tcp 只用tcp协议</div><div class="line">	min_ttl=1d;       // Retain cached entries at least 15 minutes.</div><div class="line">	max_ttl=1w;	   // One week.</div><div class="line">	timeout=10;        // Global timeout option (10 seconds).</div><div class="line">&#125;</div><div class="line">server &#123;</div><div class="line">	label = <span class="string">"114dns"</span>; //设置114DNS作为上游服务器</div><div class="line">	ip = 114.114.114.114,114.114.115.115;</div><div class="line">	timeout = 10;</div><div class="line">	port = 53; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
-<li><p>LAX03 OpenVZ架构，亚洲优化线路，无CN2<br>IPv4 测试IP: 202.5.16.2<br>IPv6 测试IP: 2602:ffc5:60::1:f0ad<br>测试下载文件: <a href="http://la03-lg.hostus.us/10MB.test" target="_blank" rel="external">10MB</a> <a href="http://la03-lg.hostus.us/100MB.test" target="_blank" rel="external">100MB</a> <a href="http://la03-lg.hostus.us/500MB.test" target="_blank" rel="external">500MB</a><br>上海电信测试<br>ping <code>64 bytes from 172.106.32.2: icmp_seq=1 ttl=51 time=175 ms</code><br>wget下载10兆文件速度 <code>3.52M/s</code><br><img src="http://wx3.sinaimg.cn/large/0060hWkWly1fc3v2q6nm3j30fz08k75e.jpg" alt="HostUS联通电信CN2线路直连美国洛杉矶VPS，搭建ss，轻松看4K油管"><br><strong>最低配置</strong>：<br>OpenVZ架构（不可以升级内核，不可以安装锐速和BBR）<br>512MB 内存<br>512MB 虚拟内存<br>10GB 硬盘<br>1 CPU<br>250GB 流量<br>1Gbps 带宽<br>1x IPv4<br>4x IPv6<br>价格：每季度5.95USD，每年18.95USD<br>购买地址：<a href="https://my.hostus.us/aff.php?aff=1494&amp;pid=166" target="_blank" rel="external">https://my.hostus.us/aff.php?aff=1494&amp;pid=166</a>  </p>
-</li>
+<li><p><strong>高级用户</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">global &#123;</div><div class="line">	perm_cache=2048;</div><div class="line">	cache_dir=<span class="string">"/var/cache/pdnsd"</span>;</div><div class="line">	run_as=<span class="string">"pdnsd"</span>;</div><div class="line">	server_ip = 0.0.0.0;  // Use eth0 here <span class="keyword">if</span> you want to allow other</div><div class="line">	server_port = 53;	// machines on your network to query pdnsd.</div><div class="line">	status_ctl = on;</div><div class="line">  	paranoid=on;</div><div class="line">	query_method=tcp_only;	// pdnsd must be compiled with tcp 只用tcp协议</div><div class="line">	min_ttl=1d;       // Retain cached entries at least 15 minutes.</div><div class="line">	max_ttl=1w;	   // One week.</div><div class="line">	timeout=10;        // Global timeout option (10 seconds).</div><div class="line">&#125;</div><div class="line">server &#123;</div><div class="line">	label = <span class="string">"prcdns"</span>; //设置PRCDNS作为上游服务器</div><div class="line">	ip = 23.106.151.177;</div><div class="line">	timeout = 10;</div><div class="line">	port = 3535; </div><div class="line">&#125;</div><div class="line">server &#123;</div><div class="line">	label = <span class="string">"114dns"</span>; //备用114DNS作为上游服务器</div><div class="line">	ip = 114.114.114.114,114.114.115.115;</div><div class="line">	timeout = 10;</div><div class="line">	port = 53; </div><div class="line">&#125;</div></pre></td></tr></table></figure></li>
 </ul>
-<p>CN2确实比普通优化线路好上不少，KVM架构的VPS可玩性也比较高，可以升级内核，安装锐速和BBR，不过要注意HostUS的许可协议，不允许游戏服务器和二次虚拟化（不清楚允不允许Docker）。<br>我在2016年9月购买了他的位于达拉斯的VPS，速度一般，看油管只有几百k，后来就舍弃了，听说它开通了洛杉矶的联通电信直连套餐，于是发了工单，要求换到洛杉矶的LAX03。<br>换好之后，不免测试一番，用的是北京联通，延迟170ms左右，看油管轻松1080P，早上的时候4K也是可以的，速度和<a href="https://bwh1.net/aff.php?aff=12296" target="_blank" rel="external">搬瓦工</a>差不多。<br><img src="http://wx1.sinaimg.cn/large/0060hWkWly1fc3uqi3zjrj30nr0ddh0u.jpg" alt="HostUS联通电信CN2线路直连美国洛杉矶VPS，搭建ss，轻松看4K油管"></p>
-<h2 id="HostUS官网-1"><a href="#HostUS官网-1" class="headerlink" title="HostUS官网"></a><a href="https://my.hostus.us/aff.php?aff=1494" target="_blank" rel="external">HostUS官网</a></h2>
+
             
         </div>
 
@@ -176,7 +171,7 @@ HostUS官网HostUS洛杉矶节点有三条">
 <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
             
             
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CN2/">CN2</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VPS/">VPS</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DNS/">DNS</a></li></ul>
 
 
         </footer>
@@ -186,19 +181,12 @@ HostUS官网HostUS洛杉矶节点有三条">
 <ul id="article-nav" class="nav nav-pills nav-justified">
   
   <li role="presentation">
-    <a href="/2017-01-20/拼了！李彦宏为了给百度打广告-把女儿都推出来了.html" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017-01-27/pdnsd配合PRCDNS搭建DNS防止DNS劫持.html" id="article-nav-older" class="article-nav-link-wrap">
       <i class="fa fa-chevron-left pull-left"></i>
-      <span class="article-nav-link-title">拼了！李彦宏为了给百度打广告 把女儿都推出来了</span>
+      <span class="article-nav-link-title">pdnsd配合PRCDNS搭建DNS防止DNS劫持</span>
     </a>
   </li>
   
-  
-  <li role="presentation">
-    <a href="/2017-01-27/AndroidStudio开发的电脑配置推荐.html" id="article-nav-newer" class="article-nav-link-wrap">
-      <span class="article-nav-link-title">AndroidStudio开发的电脑配置推荐</span>
-      <i class="fa fa-chevron-right pull-right"></i>
-    </a>
-  </li>
   
 </ul>
 
@@ -209,7 +197,7 @@ HostUS官网HostUS洛杉矶节点有三条">
 
 <section id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="post-HostUS联通电信CN2线路直连美国洛杉矶VPS，搭建ss，轻松看4K油管" data-title="HostUS联通电信CN2线路直连美国洛杉矶VPS，搭建ss，轻松看4K油管" data-url="http://www.liuboping.com/2017-01-26/HostUS联通电信CN2线路直连美国洛杉矶VPS，搭建ss，轻松看4K油管.html"></div>
+    <div class="ds-thread" data-thread-key="post-如何利用pdnsd和PRCDNS防止DNS劫持" data-title="如何利用pdnsd和PRCDNS防止DNS劫持" data-url="http://www.liuboping.com/2017-01-28/如何利用pdnsd和PRCDNS防止DNS劫持.html"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
