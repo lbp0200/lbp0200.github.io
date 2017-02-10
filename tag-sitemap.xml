@@ -16,6 +16,13 @@
     </url>
 
     <url>
+        <loc>http://www.liuboping.com/tags/DNS/</loc>
+        <lastmod>2017-02-03T01:24:58.512Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://www.liuboping.com/tags/%E6%94%92%E6%9C%BA/</loc>
         <lastmod>2017-02-03T01:24:58.512Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -24,13 +31,6 @@
 
     <url>
         <loc>http://www.liuboping.com/tags/CN2/</loc>
-        <lastmod>2017-02-03T01:24:58.512Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://www.liuboping.com/tags/DNS/</loc>
         <lastmod>2017-02-03T01:24:58.512Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -46,6 +46,20 @@
     <url>
         <loc>http://www.liuboping.com/tags/%E5%8F%8C%E7%BA%BF%E4%B8%BB%E6%9C%BA/</loc>
         <lastmod>2017-02-07T02:14:10.593Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.liuboping.com/tags/%E6%B8%B8%E6%88%8F/</loc>
+        <lastmod>2017-02-10T05:36:39.799Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.liuboping.com/tags/%E4%B8%BB%E6%9C%BA%E9%85%8D%E7%BD%AE/</loc>
+        <lastmod>2017-02-10T05:36:39.799Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
