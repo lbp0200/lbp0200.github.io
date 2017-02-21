@@ -105,6 +105,68 @@
         <div class="col-sm-8 blog-main">
             
   
+    <article id="post-怎样使用Hexo像WordPress那样在线可视化写博客" class="article article-type-post" itemscope
+         itemprop="blogPost">
+
+    <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017-01-16/怎样使用Hexo像WordPress那样在线可视化写博客.html">怎样使用Hexo像WordPress那样在线可视化写博客</a>
+    </h1>
+  
+
+
+    </header>
+
+    <div class="article-meta">
+        <div class="article-datetime">
+  <a href="/2017-01-16/怎样使用Hexo像WordPress那样在线可视化写博客.html" class="article-date"><time datetime="2017-01-16T06:24:40.000Z" itemprop="datePublished">2017-01-16</time></a>
+</div>
+
+        
+        <div class="article-author">刘博平</div>
+        
+        
+
+    </div>
+    <div class="article-inner">
+
+        <div class="article-entry" itemprop="articleBody">
+            
+            <p>Hexo有一款插件<code>hexo-admin</code>即可轻松实现，地址：(<a href="https://github.com/jaredly/hexo-admin" target="_blank" rel="external">https://github.com/jaredly/hexo-admin</a>)<br>它能够管理文章，添加分类和标签，也可以一键部署。<br>只需访问: <a href="http://localhost:4000/admin" target="_blank" rel="external">http://localhost:4000/admin</a>，即可完成所有操作。</p>
+<p>这里重点说说<code>一键部署</code></p>
+<ol>
+<li><p>首先配置<code>_config.yml</code>，新增</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="attr">admin:</span></div><div class="line"><span class="attr">  deployCommand:</span> <span class="string">'sh ./hexo-deploy.sh'</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>新增<code>hexo-deploy.sh</code>文件，内容如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/env sh</div><div class="line">rm -rf public</div><div class="line">hexo deploy --generate</div></pre></td></tr></table></figure>
+</li>
+<li><p>最后，写完博客，点<code>Deploy</code>-<code>deploy</code>，就轻松地把新博文发布啦。</p>
+</li>
+</ol>
+
+            
+        </div>
+
+        
+        
+
+        
+
+        <footer class="article-footer">
+            
+            
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+  
     <article id="post-linux发行版哪个好" class="article article-type-post" itemscope
          itemprop="blogPost">
 
@@ -678,7 +740,7 @@
   
   <div class="sidebar-module">
     <h4>Tags</h4>
-    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/CN2/">CN2</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/DNS/">DNS</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/VPS/">VPS</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/主机配置/">主机配置</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/云计算/">云计算</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/双线主机/">双线主机</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/攒机/">攒机</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/架构/">架构</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/游戏/">游戏</a><span class="sidebar-module-list-count">1</span></li></ul>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/CN2/">CN2</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/DNS/">DNS</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/SS/">SS</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/VPS/">VPS</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/主机配置/">主机配置</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/云计算/">云计算</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/双线主机/">双线主机</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/攒机/">攒机</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/架构/">架构</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/游戏/">游戏</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/网络/">网络</a><span class="sidebar-module-list-count">1</span></li></ul>
   </div>
 
 
@@ -687,7 +749,7 @@
   <div class="sidebar-module">
     <h4>Tag Cloud</h4>
     <p class="tagcloud">
-      <a href="/tags/CN2/" style="font-size: 10px;">CN2</a> <a href="/tags/DNS/" style="font-size: 20px;">DNS</a> <a href="/tags/VPS/" style="font-size: 20px;">VPS</a> <a href="/tags/主机配置/" style="font-size: 10px;">主机配置</a> <a href="/tags/云计算/" style="font-size: 10px;">云计算</a> <a href="/tags/双线主机/" style="font-size: 10px;">双线主机</a> <a href="/tags/攒机/" style="font-size: 10px;">攒机</a> <a href="/tags/架构/" style="font-size: 10px;">架构</a> <a href="/tags/游戏/" style="font-size: 10px;">游戏</a>
+      <a href="/tags/CN2/" style="font-size: 10px;">CN2</a> <a href="/tags/DNS/" style="font-size: 20px;">DNS</a> <a href="/tags/SS/" style="font-size: 10px;">SS</a> <a href="/tags/VPS/" style="font-size: 20px;">VPS</a> <a href="/tags/主机配置/" style="font-size: 10px;">主机配置</a> <a href="/tags/云计算/" style="font-size: 10px;">云计算</a> <a href="/tags/双线主机/" style="font-size: 10px;">双线主机</a> <a href="/tags/攒机/" style="font-size: 10px;">攒机</a> <a href="/tags/架构/" style="font-size: 10px;">架构</a> <a href="/tags/游戏/" style="font-size: 10px;">游戏</a> <a href="/tags/网络/" style="font-size: 10px;">网络</a>
     </p>
   </div>
 
@@ -695,7 +757,7 @@
   
   <div class="sidebar-module">
     <h4>归档</h4>
-    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/02/">二月 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/01/">一月 2017</a><span class="sidebar-module-list-count">18</span></li></ul>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/02/">二月 2017</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/01/">一月 2017</a><span class="sidebar-module-list-count">18</span></li></ul>
   </div>
 
 
@@ -704,6 +766,10 @@
   <div class="sidebar-module">
     <h4>最新文章</h4>
     <ul class="sidebar-module-list">
+      
+        <li>
+          <a href="/2017-02-21/SS速度慢——最大的可能是被运营商QoS了.html">SS速度慢——最大的可能是被运营商QoS了</a>
+        </li>
       
         <li>
           <a href="/2017-02-10/lol英雄联盟游戏主机配置推荐.html">lol英雄联盟游戏主机配置推荐</a>
@@ -719,10 +785,6 @@
       
         <li>
           <a href="/2017-01-27/AndroidStudio开发的电脑配置推荐.html">AndroidStudio开发的电脑配置推荐</a>
-        </li>
-      
-        <li>
-          <a href="/2017-01-26/HostUS联通电信CN2线路直连美国洛杉矶VPS，搭建ss，轻松看4K油管.html">HostUS联通电信CN2线路直连美国洛杉矶VPS，搭建ss，轻松看4K油管</a>
         </li>
       
     </ul>
