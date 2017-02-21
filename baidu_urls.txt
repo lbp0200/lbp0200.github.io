@@ -1,3 +1,3 @@
+http://www.liuboping.com/2017-02-21/魔方云VPS美国洛杉矶BGP-CN2直连线路KVM和母机自带锐速的OpenVZ.html
 http://www.liuboping.com/2017-02-21/SS速度慢——最大的可能是被运营商QoS了.html
 http://www.liuboping.com/2017-02-10/lol英雄联盟游戏主机配置推荐.html
-http://www.liuboping.com/2017-01-28/如何利用pdnsd和PRCDNS防止DNS劫持.html
