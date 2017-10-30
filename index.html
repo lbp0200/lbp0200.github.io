@@ -105,6 +105,75 @@
         <div class="col-sm-8 blog-main">
             
   
+    <article id="post-一键安装SSR酸酸乳最新版auth-chain-b" class="article article-type-post" itemscope
+         itemprop="blogPost">
+
+    <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017-10-30/一键安装SSR酸酸乳最新版auth-chain-b.html">一键安装SSR酸酸乳最新版auth_chain_b</a>
+    </h1>
+  
+
+
+    </header>
+
+    <div class="article-meta">
+        <div class="article-datetime">
+  <a href="/2017-10-30/一键安装SSR酸酸乳最新版auth-chain-b.html" class="article-date"><time datetime="2017-10-30T05:34:21.000Z" itemprop="datePublished">2017-10-30</time></a>
+</div>
+
+        
+        <div class="article-author">丑锉穷</div>
+        
+        
+
+    </div>
+    <div class="article-inner">
+
+        <div class="article-entry" itemprop="articleBody">
+            
+            <p><a href="https://github.com/lbp0200/ssr-bwg" target="_blank" rel="external">一键安装SSR酸酸乳 开源地址</a></p>
+<p>Centos系统测试通过</p>
+<h3 id="安装命令"><a href="#安装命令" class="headerlink" title="安装命令"></a>安装命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl -s https://raw.githubusercontent.com/lbp0200/ssr-bwg/master/install-ssr-bwg.sh | sh -s pwd1</div></pre></td></tr></table></figure>
+<p>搬瓦工上使用甚至不需要xshell这些ssh客户端<br>直接在<code>kiwivm</code>面板里面，找到<code>Root shell - basic</code>，把命令粘贴到里面，回车执行就可以。</p>
+<h3 id="连接参数："><a href="#连接参数：" class="headerlink" title="连接参数："></a>连接参数：</h3><ul>
+<li>服务器IP：你的VPS IP</li>
+<li>端口：443</li>
+<li>密码：pwd1</li>
+<li>加密：none</li>
+<li>协议：auth_chain_b</li>
+<li>混淆：tls1.2_ticket_auth</li>
+</ul>
+<h3 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h3><blockquote>
+<p>协议<code>auth_chain_b</code>是ssr酸酸乳最新的版本里面才有的，目前IPhone中国区已经下架了酸酸乳客户端，请自行解决。</p>
+</blockquote>
+<h3 id="酸酸乳客户端："><a href="#酸酸乳客户端：" class="headerlink" title="酸酸乳客户端："></a>酸酸乳客户端：</h3><ul>
+<li>python版（全平台）：<code>https://github.com/shadowsocksr-backup/shadowsocksr</code></li>
+<li>Android版：<code>https://github.com/shadowsocksr-backup/shadowsocksr-android/releases</code></li>
+</ul>
+
+            
+        </div>
+
+        
+        
+
+        
+
+        <footer class="article-footer">
+            
+            
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+  
     <article id="post-ssh走shadowsocks-r-防止GFW干扰" class="article article-type-post" itemscope
          itemprop="blogPost">
 
@@ -673,64 +742,6 @@
 
 
   
-    <article id="post-解决chrome浏览器flash不是最新版本的问题" class="article article-type-post" itemscope
-         itemprop="blogPost">
-
-    <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017-02-21/解决chrome浏览器flash不是最新版本的问题.html">解决chrome浏览器flash不是最新版本的问题</a>
-    </h1>
-  
-
-
-    </header>
-
-    <div class="article-meta">
-        <div class="article-datetime">
-  <a href="/2017-02-21/解决chrome浏览器flash不是最新版本的问题.html" class="article-date"><time datetime="2017-02-21T11:26:47.000Z" itemprop="datePublished">2017-02-21</time></a>
-</div>
-
-        
-        <div class="article-author">刘博平</div>
-        
-        
-
-    </div>
-    <div class="article-inner">
-
-        <div class="article-entry" itemprop="articleBody">
-            
-            <blockquote>
-<p>Chrome一直提示“adobe flash player 因过期而遭阻止”或者提示“adobe flash player 不是最新版本”</p>
-</blockquote>
-<ol>
-<li>下载Flash的最新版本，一定要选择包含PPAPI字样的，并解压到本地计算机<br><a href="https://get.adobe.com/cn/flashplayer/otherversions/" target="_blank" rel="external">https://get.adobe.com/cn/flashplayer/otherversions/</a></li>
-<li>开启Flash<br>在计算机上打开 Chrome。<br>在顶部地址栏中，输入 chrome://plugins，然后按 Enter。<br>在“Adobe Flash Player”下方，点击启用。  </li>
-<li>给chrome添加启动参数<br>参考Ubuntu：<br> <code>sudo vim /usr/share/applications/google-chrome.desktop</code><br>找到<code>Exec=/usr/bin/google-chrome-stable</code>，注意有多处，在<code>google-chrome-stable</code>后面添加参数。<br>例如<code>Exec=/usr/bin/google-chrome-stable --ppapi-flash-path=/usr/lib/adobe-flashplugin/libpepflashplayer.so --ppapi-flash-version=24.0.0.221 %U</code></li>
-</ol>
-
-            
-        </div>
-
-        
-        
-
-        
-
-        <footer class="article-footer">
-            
-            
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-  
 
 
   <div id="page-nav">
@@ -787,7 +798,7 @@
   
   <div class="sidebar-module">
     <h4>归档</h4>
-    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/10/">十月 2017</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/09/">九月 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/08/">八月 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/06/">六月 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/02/">二月 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/01/">一月 2017</a><span class="sidebar-module-list-count">18</span></li></ul>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/10/">十月 2017</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/09/">九月 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/08/">八月 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/06/">六月 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/02/">二月 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/01/">一月 2017</a><span class="sidebar-module-list-count">18</span></li></ul>
   </div>
 
 
@@ -796,6 +807,10 @@
   <div class="sidebar-module">
     <h4>最新文章</h4>
     <ul class="sidebar-module-list">
+      
+        <li>
+          <a href="/2017-10-30/一键安装SSR酸酸乳最新版auth-chain-b.html">一键安装SSR酸酸乳最新版auth_chain_b</a>
+        </li>
       
         <li>
           <a href="/2017-10-23/ssh走shadowsocks-r-防止GFW干扰.html">ssh走shadowsocks/r 防止GFW干扰</a>
@@ -811,10 +826,6 @@
       
         <li>
           <a href="/2017-08-11/美国洛杉矶CN2线路VPS打折优惠信息.html">美国洛杉矶CN2线路VPS打折优惠信息</a>
-        </li>
-      
-        <li>
-          <a href="/2017-08-10/突然对人生感到迷茫该怎么办.html">突然对人生感到迷茫该怎么办</a>
         </li>
       
     </ul>
