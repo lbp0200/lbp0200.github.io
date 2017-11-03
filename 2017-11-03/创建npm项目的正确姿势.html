@@ -5,19 +5,23 @@
     
     <title>
         
-        Archives: 2017/10 |
+        创建npm项目的正确姿势 |
         
         丑锉穷的博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="VPS，电脑主机，视频转码，无线路由器，PHP，Python，数据库">
-<meta property="og:type" content="website">
-<meta property="og:title" content="丑锉穷的博客">
-<meta property="og:url" content="http://www.liuboping.com/archives/2017/10/index.html">
+    <meta name="description" content="好处： 使用npm run dev npm run prod 之类的命令，即可在开发环境编程、单元测试、生产发布等一系列自动化的工作
+1234567sudo npm install -g yo # 安装Yeomansudo npm install -g generator-react-webpack # 安装react项目模板# 创建项目文件夹mkdir my-new-project &amp;amp;&amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="创建npm项目的正确姿势">
+<meta property="og:url" content="http://www.liuboping.com/2017-11-03/创建npm项目的正确姿势.html">
 <meta property="og:site_name" content="丑锉穷的博客">
-<meta property="og:description" content="VPS，电脑主机，视频转码，无线路由器，PHP，Python，数据库">
+<meta property="og:description" content="好处： 使用npm run dev npm run prod 之类的命令，即可在开发环境编程、单元测试、生产发布等一系列自动化的工作
+1234567sudo npm install -g yo # 安装Yeomansudo npm install -g generator-react-webpack # 安装react项目模板# 创建项目文件夹mkdir my-new-project &amp;amp;&amp;">
+<meta property="og:updated_time" content="2017-11-03T09:00:48.592Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="丑锉穷的博客">
-<meta name="twitter:description" content="VPS，电脑主机，视频转码，无线路由器，PHP，Python，数据库">
+<meta name="twitter:title" content="创建npm项目的正确姿势">
+<meta name="twitter:description" content="好处： 使用npm run dev npm run prod 之类的命令，即可在开发环境编程、单元测试、生产发布等一系列自动化的工作
+1234567sudo npm install -g yo # 安装Yeomansudo npm install -g generator-react-webpack # 安装react项目模板# 创建项目文件夹mkdir my-new-project &amp;amp;&amp;">
     
     
     
@@ -81,7 +85,7 @@
           <li><a class=""
                  href="/">首页</a></li>
         
-          <li><a class="active"
+          <li><a class=""
                  href="/archives/">归档</a></li>
         
       </ul>
@@ -105,80 +109,78 @@
 
     <div class="row">
         <div class="col-sm-8 blog-main">
+            <article id="post-创建npm项目的正确姿势" class="article article-type-post" itemscope
+         itemprop="blogPost">
+
+    <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      创建npm项目的正确姿势
+    </h1>
+  
+
+
+    </header>
+
+    <div class="article-meta">
+        <div class="article-datetime">
+  <a href="/2017-11-03/创建npm项目的正确姿势.html" class="article-date"><time datetime="2017-11-03T09:00:38.000Z" itemprop="datePublished">2017-11-03</time></a>
+</div>
+
+        
+        <div class="article-author">丑锉穷</div>
+        
+        
+
+    </div>
+    <div class="article-inner">
+
+        <div class="article-entry" itemprop="articleBody">
             
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
+            <p>好处： 使用<code>npm run dev</code> <code>npm run prod</code> 之类的命令，即可在开发环境编程、单元测试、生产发布等一系列自动化的工作</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">sudo npm install -g yo <span class="comment"># 安装Yeoman</span></div><div class="line">sudo npm install -g generator-react-webpack <span class="comment"># 安装react项目模板</span></div><div class="line"></div><div class="line"><span class="comment"># 创建项目文件夹</span></div><div class="line">mkdir my-new-project &amp;&amp; <span class="built_in">cd</span> my-new-project</div><div class="line"><span class="comment"># 生成项目</span></div><div class="line">yo react-webpack</div></pre></td></tr></table></figure>
+<ul>
+<li><a href="http://yeoman.io/" target="_blank" rel="external">Yeoman</a> 生成项目工具</li>
+<li><a href="https://github.com/react-webpack-generators/generator-react-webpack" target="_blank" rel="external">generator-react-webpack</a> 项目模板，用于扩展Yeoman</li>
+<li><a href="http://yeoman.io/generators/" target="_blank" rel="external">更多Yeoman模板</a></li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm run serve <span class="comment">#开发环境，写代码</span></div><div class="line">npm run lint <span class="comment">#检查代码质量</span></div></pre></td></tr></table></figure>
+            
         </div>
-        <div class="archives">
+
+        
+        
+
+        
+
+        <footer class="article-footer">
+            
+            
+            <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+            
+            
+
+        </footer>
+    </div>
     
-    <article class="archive-article archive-type-post">
-  <header class="archive-article-header">
     
+<ul id="article-nav" class="nav nav-pills nav-justified">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017-10-30/一键安装SSR酸酸乳最新版auth-chain-b.html">一键安装SSR酸酸乳最新版auth_chain_b</a>
-    </h1>
+  <li role="presentation">
+    <a href="/2017-10-30/一键安装SSR酸酸乳最新版auth-chain-b.html" id="article-nav-older" class="article-nav-link-wrap">
+      <i class="fa fa-chevron-left pull-left"></i>
+      <span class="article-nav-link-title">一键安装SSR酸酸乳最新版auth_chain_b</span>
+    </a>
+  </li>
   
+  
+</ul>
 
 
-    <div class="article-datetime">
-  <a href="/2017-10-30/一键安装SSR酸酸乳最新版auth-chain-b.html" class="archive-article-date"><time datetime="2017-10-30T05:34:21.000Z" itemprop="datePublished">十月 30日</time></a>
-</div>
-
-  </header>
+    
 </article>
-
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <header class="archive-article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017-10-23/ssh走shadowsocks-r-防止GFW干扰.html">ssh走shadowsocks/r 防止GFW干扰</a>
-    </h1>
-  
-
-
-    <div class="article-datetime">
-  <a href="/2017-10-23/ssh走shadowsocks-r-防止GFW干扰.html" class="archive-article-date"><time datetime="2017-10-23T03:02:10.000Z" itemprop="datePublished">十月 23日</time></a>
-</div>
-
-  </header>
-</article>
-
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <header class="archive-article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017-10-18/周易算出逃课学生.html">周易算出逃课学生</a>
-    </h1>
-  
-
-
-    <div class="article-datetime">
-  <a href="/2017-10-18/周易算出逃课学生.html" class="archive-article-date"><time datetime="2017-10-18T05:24:22.000Z" itemprop="datePublished">十月 18日</time></a>
-</div>
-
-  </header>
-</article>
-
-  
-  
-    </div></section>
-  
 
 
 

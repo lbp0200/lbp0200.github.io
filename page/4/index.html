@@ -57,7 +57,7 @@
 
 <body>
 
-<a id="myModal" class="myad modal fade" tabindex="-1" href="https://s.click.taobao.com/t?e=m%3D2%26s%3Dqkiuf0pDlO4cQipKwQzePCperVdZeJviK7Vc7tFgwiFRAdhuF14FMUHYBuYlf90AMMgx22UI05aV207OvaxmSKscM2IULaVPNZcuHc%2F2EGC2Gk%2Bl5lF7Mk2srC8Mk09eQgZss1jm63jO54LQ%2FVw1LxISvUSwasgDS5V4r%2FlXEPsk%2FCKKDVvEs3p0YKDAwPUccI8ue5ukFbvgA%2BSP6HWkZjnIEmbJFXTitgsX9Z4QmPXLP4XO97Tuio%2BgRw6KoLAkxiXvDf8DaRs%3D" target="_blank"></a>
+<a id="myModal" class="myad modal fade" tabindex="-1" href="https://ai.taobao.com/search/index.htm?key=%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C&amp;pid=mm_48510912_39224268_146030740" target="_blank"></a>
 
 <nav class="navbar navbar-inverse">
   <div class="container">
@@ -104,6 +104,56 @@
     <div class="row">
         <div class="col-sm-8 blog-main">
             
+  
+    <article id="post-PHP给多维数组赋值避免notice警告" class="article article-type-post" itemscope
+         itemprop="blogPost">
+
+    <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017-01-11/PHP给多维数组赋值避免notice警告.html">PHP给多维数组赋值避免notice警告</a>
+    </h1>
+  
+
+
+    </header>
+
+    <div class="article-meta">
+        <div class="article-datetime">
+  <a href="/2017-01-11/PHP给多维数组赋值避免notice警告.html" class="article-date"><time datetime="2017-01-11T10:50:28.000Z" itemprop="datePublished">2017-01-11</time></a>
+</div>
+
+        
+        <div class="article-author">刘博平</div>
+        
+        
+
+    </div>
+    <div class="article-inner">
+
+        <div class="article-entry" itemprop="articleBody">
+            
+            <figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"> <span class="comment">/**</span></div><div class="line"> * 给多维数组复制,避免notice警告</div><div class="line"> * <span class="doctag">@param</span> $data array</div><div class="line"> * <span class="doctag">@param</span> $key_arr array</div><div class="line"> * <span class="doctag">@param</span> $value mixed</div><div class="line"> * <span class="doctag">@return</span> void</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">array_multidimensional_set</span><span class="params">(&amp;$data, $key_arr, $value)</span></span></div><div class="line">&#123;</div><div class="line">    $cur_arr = <span class="keyword">null</span>;</div><div class="line">    <span class="keyword">foreach</span> ($key_arr <span class="keyword">as</span> $key) &#123;</div><div class="line">        <span class="keyword">if</span> ($cur_arr === <span class="keyword">null</span>) &#123;</div><div class="line">            <span class="keyword">if</span> (!<span class="keyword">isset</span>($data[$key])) &#123;</div><div class="line">                $data[$key] = <span class="keyword">array</span>();</div><div class="line">            &#125;</div><div class="line">            $cur_arr =&amp; $data[$key];</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            <span class="keyword">if</span> (!<span class="keyword">isset</span>($cur_arr[$key])) &#123;</div><div class="line">                $cur_arr[$key] = <span class="keyword">array</span>();</div><div class="line">            &#125;</div><div class="line">            $cur_arr = &amp;$cur_arr[$key];</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    $cur_arr = $value;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+            
+        </div>
+
+        
+        
+
+        
+
+        <footer class="article-footer">
+            
+            
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
   
     <article id="post-php模仿tail实现读取log文件" class="article article-type-post" itemscope
          itemprop="blogPost">
@@ -337,7 +387,7 @@
   
   <div class="sidebar-module">
     <h4>归档</h4>
-    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/10/">十月 2017</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/09/">九月 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/08/">八月 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/06/">六月 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/02/">二月 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/01/">一月 2017</a><span class="sidebar-module-list-count">18</span></li></ul>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/11/">十一月 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/10/">十月 2017</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/09/">九月 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/08/">八月 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/06/">六月 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/02/">二月 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/01/">一月 2017</a><span class="sidebar-module-list-count">18</span></li></ul>
   </div>
 
 
@@ -346,6 +396,10 @@
   <div class="sidebar-module">
     <h4>最新文章</h4>
     <ul class="sidebar-module-list">
+      
+        <li>
+          <a href="/2017-11-03/创建npm项目的正确姿势.html">创建npm项目的正确姿势</a>
+        </li>
       
         <li>
           <a href="/2017-10-30/一键安装SSR酸酸乳最新版auth-chain-b.html">一键安装SSR酸酸乳最新版auth_chain_b</a>
@@ -361,10 +415,6 @@
       
         <li>
           <a href="/2017-09-08/PHP最流行的框架排行.html">PHP最流行的框架排行</a>
-        </li>
-      
-        <li>
-          <a href="/2017-08-11/美国洛杉矶CN2线路VPS打折优惠信息.html">美国洛杉矶CN2线路VPS打折优惠信息</a>
         </li>
       
     </ul>
