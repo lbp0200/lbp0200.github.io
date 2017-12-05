@@ -105,6 +105,150 @@
         <div class="col-sm-8 blog-main">
             
   
+    <article id="post-pdnsd配合PRCDNS搭建DNS防止DNS劫持" class="article article-type-post" itemscope
+         itemprop="blogPost">
+
+    <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017-01-27/pdnsd配合PRCDNS搭建DNS防止DNS劫持.html">pdnsd配合PRCDNS搭建DNS防止DNS劫持</a>
+    </h1>
+  
+
+
+    </header>
+
+    <div class="article-meta">
+        <div class="article-datetime">
+  <a href="/2017-01-27/pdnsd配合PRCDNS搭建DNS防止DNS劫持.html" class="article-date"><time datetime="2017-01-27T10:41:00.000Z" itemprop="datePublished">2017-01-27</time></a>
+</div>
+
+        
+        <div class="article-author">刘博平</div>
+        
+        
+
+    </div>
+    <div class="article-inner">
+
+        <div class="article-entry" itemprop="articleBody">
+            
+            <p><a href="https://github.com/lbp0200/PRCDNS" target="_blank" rel="external">PRCDNS</a>是一个Google DNS代理，使用<a href="https://developers.google.com/speed/public-dns/docs/dns-over-https" target="_blank" rel="external">DNS-over-HTTPS</a>接口，保证DNS的纯洁性，同时使用TCP保证运营商不会劫持DNS结果。</p>
+<h2 id="DNS解析流程"><a href="#DNS解析流程" class="headerlink" title="DNS解析流程"></a>DNS解析流程</h2><p>客户端 =&gt; pdnsd =&gt; PRCDNS =&gt; Google DNS 接口</p>
+<p>PRCDNS的搭建流程可以参考github上的文档</p>
+<h2 id="pdnsd安装配置"><a href="#pdnsd安装配置" class="headerlink" title="pdnsd安装配置"></a>pdnsd安装配置</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt install pdnsd</div><div class="line">sudo vim /etc/pdnsd.conf</div></pre></td></tr></table></figure>
+<p>配置文件参考<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">global &#123;</div><div class="line">	perm_cache=2048;</div><div class="line">	cache_dir=<span class="string">"/var/cache/pdnsd"</span>;</div><div class="line">	run_as=<span class="string">"pdnsd"</span>;</div><div class="line">	server_ip = 0.0.0.0;  // Use eth0 here <span class="keyword">if</span> you want to allow other</div><div class="line">	server_port = 53;	// machines on your network to query pdnsd.</div><div class="line">	status_ctl = on;</div><div class="line">  	paranoid=on;</div><div class="line">	query_method=tcp_only;	// pdnsd must be compiled with tcp 只用tcp协议</div><div class="line">	min_ttl=1d;       // Retain cached entries at least 15 minutes.</div><div class="line">	max_ttl=1w;	   // One week.</div><div class="line">	timeout=10;        // Global timeout option (10 seconds).</div><div class="line">	par_queries=1;  一定要加，否则会同时查询114，114会抢答查询结果</div><div class="line">&#125;</div><div class="line">server &#123;</div><div class="line">	label = <span class="string">"prcdns"</span>; //设置PRCDNS作为上游服务器</div><div class="line">	ip = 23.106.151.177;</div><div class="line">	timeout = 10;</div><div class="line">	port = 3535; </div><div class="line">&#125;</div><div class="line">server &#123;</div><div class="line">	label = <span class="string">"114dns"</span>; //备用114DNS作为上游服务器</div><div class="line">	ip = 114.114.114.114,114.114.115.115;</div><div class="line">	timeout = 10;</div><div class="line">	port = 53; </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+            
+        </div>
+
+        
+        
+
+        
+
+        <footer class="article-footer">
+            
+            
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DNS/">DNS</a></li></ul>
+
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+  
+    <article id="post-AndroidStudio开发的电脑配置推荐" class="article article-type-post" itemscope
+         itemprop="blogPost">
+
+    <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017-01-27/AndroidStudio开发的电脑配置推荐.html">AndroidStudio开发的电脑配置推荐</a>
+    </h1>
+  
+
+
+    </header>
+
+    <div class="article-meta">
+        <div class="article-datetime">
+  <a href="/2017-01-27/AndroidStudio开发的电脑配置推荐.html" class="article-date"><time datetime="2017-01-27T09:58:00.000Z" itemprop="datePublished">2017-01-27</time></a>
+</div>
+
+        
+        <div class="article-author">刘博平</div>
+        
+        
+
+    </div>
+    <div class="article-inner">
+
+        <div class="article-entry" itemprop="articleBody">
+            
+            <blockquote>
+<p>Android Studio开发，Android Studio编译卡慢，Android Studio假死机，这些问题经常困扰Android开发者，有一台配置好的电脑，肯定会极大地提高开发效率。</p>
+</blockquote>
+<p>Android Studio是用Java写的，Java程序的特点就是比较占内存，再加上浏览器、模拟器等等内存大户，内存就会严重不足，进而操作系统就会使用虚拟内存，Android Studio就会表现出卡、慢、假死等症状，所以建议内存16G以上。<br>大内存再加上固态硬盘，就会让开发速度如虎添翼，新出的m2 ssd固态硬盘比SATA ssd固态硬盘速度快上不少。非特殊需求，显卡用集显就可以。<br>思路有了，我们看下下面的推荐配置。</p>
+<h3 id="主攻开发配置推荐"><a href="#主攻开发配置推荐" class="headerlink" title="主攻开发配置推荐"></a>主攻开发配置推荐</h3><p><strong>SEELE 暗黑者S5 i5-6500/技嘉B150/Intel 128G M.2 SSD 组装电脑主机/京东游戏UPC</strong></p>
+<blockquote>
+<p>京东SEELE，自营大牌，i5 6500，盒装CPU，3年质保，技嘉B150M-D3H，正品行货，Intel M.2 SSD，450W电源，品质护航！</p>
+</blockquote>
+<p>购买链接：<a href="http://union-click.jd.com/jdc?d=zREMPy" target="_blank" rel="external">京东价￥2899</a></p>
+<ul>
+<li>CPU：i5-6500</li>
+<li>内存：需要另买，推荐2条16G DDR4，组32G</li>
+<li>主板：技嘉（GIGABYTE）B150M-D3H</li>
+<li>显卡：集成显卡</li>
+<li>固态硬盘：600P系列 128G M.2 2280接口固态硬盘</li>
+<li>机械硬盘：无，可以根据需要另行购买</li>
+<li>机箱：追风者（PHANTEKS）416P普通版 黑色机箱</li>
+<li>电源：全汉（FSP）蓝暴经典版450 额定450W</li>
+</ul>
+<p>主机2899，加上32G内存 1T硬盘，5000元就下来了，你就拥有了一台Android Studio开发神器。<br>如果偶尔玩下游戏，这台配置也轻松应对大部分网游，英雄联盟、穿越火线等。如果玩大型游戏可以看看下面的配置。</p>
+<h3 id="开发兼顾游戏配置推荐"><a href="#开发兼顾游戏配置推荐" class="headerlink" title="开发兼顾游戏配置推荐"></a>开发兼顾游戏配置推荐</h3><p><strong>雷霆世纪 复仇者V105 i5-6500/技嘉B150M/技嘉GTX1050Ti-4G/M.2 128G SSD/游戏台式电脑主机/京东自营游戏UPC</strong></p>
+<blockquote>
+<p>京东自营，雷霆品质！1050Ti游戏主机强势来袭！I5 6500三年质保，技嘉1050Ti高规显卡，M.2接口SSD高速读写！京东采购零配件！售后有保障！</p>
+</blockquote>
+<p>购买链接：<a href="http://union-click.jd.com/jdc?d=FmD7lS" target="_blank" rel="external">京东价￥3699</a></p>
+<ul>
+<li>CPU：i5-6500</li>
+<li>内存：需要另买，推荐2条16G DDR4，组32G</li>
+<li>主板：技嘉（GIGABYTE）B150M-WIND盒装</li>
+<li>显卡：技嘉（GIGABYTE）GTX1050Ti 4GB</li>
+<li>固态硬盘：金士顿(Kingston) 128G M.2 接口固态硬盘</li>
+<li>机械硬盘：无，可以根据需要另行购买</li>
+<li>机箱：中塔式机箱</li>
+<li>电源：全汉蓝海5000+增强版</li>
+</ul>
+
+            
+        </div>
+
+        
+        
+
+        
+
+        <footer class="article-footer">
+            
+            
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/攒机/">攒机</a></li></ul>
+
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+  
     <article id="post-HostUS联通电信CN2线路直连美国洛杉矶VPS，搭建ss，轻松看4K油管" class="article article-type-post" itemscope
          itemprop="blogPost">
 
@@ -631,134 +775,6 @@
 
 
   
-    <article id="post-京东主机" class="article article-type-post" itemscope
-         itemprop="blogPost">
-
-    <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017-01-12/京东主机.html">怎样通过租用京东云主机搭建一个高性能高可用的网站</a>
-    </h1>
-  
-
-
-    </header>
-
-    <div class="article-meta">
-        <div class="article-datetime">
-  <a href="/2017-01-12/京东主机.html" class="article-date"><time datetime="2017-01-12T08:56:00.000Z" itemprop="datePublished">2017-01-12</time></a>
-</div>
-
-        
-        <div class="article-author">刘博平</div>
-        
-        
-
-    </div>
-    <div class="article-inner">
-
-        <div class="article-entry" itemprop="articleBody">
-            
-            <blockquote>
-<p>很多朋友问我：“<code>云主机租用 云主机免费 云主机价格 云主机代理 云主机服务 云主机租用代理 云主机促销 云主机哪家好 云主机公司 云主机租用价</code>”。<br>今天无意中了解了<a href="http://union-click.jd.com/jdc?d=Nmcud1" target="_blank" rel="external">京东云主机</a>，发现<a href="http://union-click.jd.com/jdc?d=Nmcud1" target="_blank" rel="external">京东云主机</a>部署网站非常方便，非常适合常用的网站架构。下面就和大家分享下怎样使用<a href="http://union-click.jd.com/jdc?d=Nmcud1" target="_blank" rel="external">京东云主机</a>部署一个常见的高性能、高可用、大数据、大并发、可以横向扩展的LNMP网站。</p>
-</blockquote>
-<div style="visibility: hidden; overflow: hidden; position: absolute; top: 0px; height: 1px; width: auto; padding: 0px; border: 0px; margin: 0px; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal;"><div id="MathJax_SVG_Hidden"></div><svg><defs id="MathJax_SVG_glyphs"><path id="MJMATHI-6E" stroke-width="1" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"/></defs></svg></div><div id="wmd-preview" class="wmd-preview"><div class="md-section-divider"></div><div class="mermaid graph" title="点击查看大图" data-anchor-id="lofj" data-processed="true"><svg id="mermaidChart107" xmlns="http://www.w3.org/2000/svg" height="100%" viewbox="0 0 470.3499984741211 262.046875" style="max-width:470.3499984741211px;"><style type="text/css" title="mermaid-svg-internal-css"> .node&gt;rect { ; } .node text  { fill:#000; stroke:none; font-weight:300; font-family:”Helvetica Neue”,Helvetica,Arial,sans-serf; font-size:14px; } .edgeLabel text  { fill:#000; stroke:none; font-weight:300; font-family:”Helvetica Neue”,Helvetica,Arial,sans-serf; font-size:14px; } .cluster rect  { rx:4px; fill: rgb(255, 255, 222); rx: 4px; stroke: rgb(170, 170, 51); stroke-width: 1px; } .label, .badge { display: inline-block; padding: 2px 4px; font-size: 11.844px; font-weight: bold; line-height: 14px; color: rgb(255, 255, 255); text-shadow: rgba(0, 0, 0, 0.247059) 0px -1px 0px; white-space: nowrap; vertical-align: baseline; background-color: rgb(153, 153, 153);} .label { border-radius: 3px;} .mermaid .label { color: rgb(51, 51, 51);} .node rect, .node circle, .node ellipse, .node polygon { fill: rgb(236, 236, 255); stroke: rgb(204, 204, 255); stroke-width: 1px;} .edgePath .path { stroke: rgb(51, 51, 51);} .edgeLabel { background-color: rgb(232, 232, 232);} .cluster rect { fill: rgb(255, 255, 222) !important; rx: 4 !important; stroke: rgb(170, 170, 51) !important; stroke-width: 1px !important;} .cluster text { fill: rgb(51, 51, 51);} </style><g><g class="output"><g class="clusters"/><g class="edgePaths"><g class="edgePath" style="opacity: 1;"><path class="path" d="M92.9372605152156,95.36069877815505L143.5999984741211,37.0078125L168.8265609741211,37.0078125" marker-end="url(#arrowhead1381)" style="stroke: #333; stroke-width: 1.5px;fill:none"/><defs><marker id="arrowhead1381" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" style="fill: #333"/></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M119.09999923706057,121.52343750000001L143.5999984741211,121.0234375L168.8265609741211,121.0234375" marker-end="url(#arrowhead1382)" style="stroke: #333; stroke-width: 1.5px;fill:none"/><defs><marker id="arrowhead1382" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" style="fill: #333"/></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M92.93726123133445,147.68617703160507L143.5999984741211,205.0390625L168.5999984741211,205.0390625" marker-end="url(#arrowhead1383)" style="stroke: #333; stroke-width: 1.5px;fill:none"/><defs><marker id="arrowhead1383" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" style="fill: #333"/></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M286.0140609741211,37.0078125L311.2406234741211,37.0078125L352.6624071176121,85.30553138779163" marker-end="url(#arrowhead1384)" style="stroke: #333; stroke-width: 1.5px;fill:none"/><defs><marker id="arrowhead1384" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" style="fill: #333"/></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M286.0140609741211,121.0234375L311.2406234741211,121.0234375L336.2406234741211,121.0234375" marker-end="url(#arrowhead1385)" style="stroke: #333; stroke-width: 1.5px;fill:none"/><defs><marker id="arrowhead1385" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" style="fill: #333"/></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M286.2406234741211,205.0390625L311.2406234741211,205.0390625L352.6624071176121,156.74134361220837" marker-end="url(#arrowhead1386)" style="stroke: #333; stroke-width: 1.5px;fill:none"/><defs><marker id="arrowhead1386" viewbox="0 0 10 10" refx="9" refy="5" markerunits="strokeWidth" markerwidth="8" markerheight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" style="fill: #333"/></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0" style="fill:#e8e8e8;"/><text><tspan xml:space="preserve" dy="1em" x="1"/></text></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0" style="fill:#e8e8e8;"/><text><tspan xml:space="preserve" dy="1em" x="1"/></text></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0" style="fill:#e8e8e8;"/><text><tspan xml:space="preserve" dy="1em" x="1"/></text></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0" style="fill:#e8e8e8;"/><text><tspan xml:space="preserve" dy="1em" x="1"/></text></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0" style="fill:#e8e8e8;"/><text><tspan xml:space="preserve" dy="1em" x="1"/></text></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0" style="fill:#e8e8e8;"/><text><tspan xml:space="preserve" dy="1em" x="1"/></text></g></g></g><g class="nodes"><g class="node" id="A" transform="translate(69.29999923706055,121.0234375)" style="opacity: 1;"><polygon points="49.300000000000004,0 98.60000000000001,-49.300000000000004 49.300000000000004,-98.60000000000001 0,-49.300000000000004" rx="5" ry="5" transform="translate(-49.300000000000004,49.300000000000004)"/><g class="label" transform="translate(0,0)"><g transform="translate(-34.6171875,-7.0078125)"><text><tspan xml:space="preserve" dy="1em" x="1">Nginx 公网IP</tspan></text></g></g></g><g class="node" id="B1" transform="translate(227.4203109741211,37.0078125)" style="opacity: 1;"><rect rx="0" ry="0" x="-58.59375" y="-17.0078125" width="117.1875" height="34.015625"/><g class="label" transform="translate(0,0)"><g transform="translate(-48.59375,-7.0078125)"><text><tspan xml:space="preserve" dy="1em" x="1">PHP-FPM 1 内网IP</tspan></text></g></g></g><g class="node" id="B2" transform="translate(227.4203109741211,121.0234375)" style="opacity: 1;"><rect rx="0" ry="0" x="-58.59375" y="-17.0078125" width="117.1875" height="34.015625"/><g class="label" transform="translate(0,0)"><g transform="translate(-48.59375,-7.0078125)"><text><tspan xml:space="preserve" dy="1em" x="1">PHP-FPM 2 内网IP</tspan></text></g></g></g><g class="node" id="Bn" transform="translate(227.4203109741211,205.0390625)" style="opacity: 1;"><rect rx="0" ry="0" x="-58.8203125" y="-17.0078125" width="117.640625" height="34.015625"/><g class="label" transform="translate(0,0)"><g transform="translate(-48.8203125,-7.0078125)"><text><tspan xml:space="preserve" dy="1em" x="1">PHP-FPM n 内网IP</tspan></text></g></g></g><g class="node" id="C" transform="translate(383.2953109741211,121.0234375)" style="opacity: 1;"><circle x="-47.0546875" y="-17.0078125" r="47.0546875"/><g class="label" transform="translate(0,0)"><g transform="translate(-37.0546875,-7.0078125)"><text><tspan xml:space="preserve" dy="1em" x="1">数据库 内网IP</tspan></text></g></g></g></g></g></g></svg></div></div>
-
-<p>上面是这种网站的架构，可能还要有Redis缓存，算上备份服务器，大概需要6-7台服务器，但是唯一需要公网IP的只有Nginx，访问其他服务器只需在Nginx服务器上开ssh（千万不能用默认的22端口），做个跳板就好了。</p>
-<blockquote>
-<p>安利下自己，本人就职于搜狐，比较擅长搭建这套架构，有需要的可以通过网页底部的邮件联系我，7*24小时噢，按天或者小时计费，无法开发票。</p>
-</blockquote>
-<h3 id="先点击http-www-jcloud-com-，进去看一看。"><a href="#先点击http-www-jcloud-com-，进去看一看。" class="headerlink" title="先点击http://www.jcloud.com/，进去看一看。"></a>先点击<a href="http://union-click.jd.com/jdc?d=Nmcud1" target="_blank">http://www.jcloud.com/</a>，进去看一看。</h3><p>按照这种架构在<a href="http://union-click.jd.com/jdc?d=Nmcud1" target="_blank" rel="external">京东云主机</a>上搭建网站的步骤如下：</p>
-<ul>
-<li><strong>购买云主机服务器</strong><br>购买5台<a href="http://union-click.jd.com/jdc?d=Nmcud1" target="_blank" rel="external">京东云主机</a>，这时这5台主机都不能通过外网访问。云主机有2种计费方式，应该根据业务的不同来选择，否则后面就是大坑。<ul>
-<li><strong>按配置计费</strong><br>适合经常搞活动的网站，比如电商搞个秒杀、搞地推，流量突然暴增，可以直接提高服务器的配置，不用修改一行代码就可以做到，建议创业公司选择，业务变化轻松应对。</li>
-<li><strong>包年包月计费</strong><br>适合小站如个人博客，一直就没有太多的流量；再就是大站，很平稳。</li>
-</ul>
-</li>
-<li><strong>配置私有内网</strong><br>5台主机放入通一个私有网络，让这5台主机能够互相访问，而其他电脑不能访问，提高安全性。</li>
-<li><strong>购买公网IP</strong><br>将购买公网IP绑定到刚才买的Nginx云主机服务器上，这样网站就能够被访问到了。公网IP和云主机一样也有2种计费方式：按配置计费和包年包月计费，就像选云主机一样选择就是了，这里还是推荐创业公司选择按配置计费。</li>
-<li><strong>域名及备案</strong><br>按照网站说明操作就可以了，或者联系客服。</li>
-</ul>
-<p>如果觉得太复杂，京东云提供了一些现成的解决方案，如电商、物流、金融、智能云、产业云……京东云的售前目前也比较主动，我今天刚注册了账号，就打电话给我。按照这种情况看，选择京东云之后，京东会给予很详细的技术指导。</p>
-<h3 id="京东云官网http-www-jcloud-com-。"><a href="#京东云官网http-www-jcloud-com-。" class="headerlink" title="京东云官网http://www.jcloud.com/。"></a>京东云官网<a href="http://union-click.jd.com/jdc?d=Nmcud1" target="_blank">http://www.jcloud.com/</a>。</h3>
-            
-        </div>
-
-        
-        
-
-        
-
-        <footer class="article-footer">
-            
-            
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/云计算/">云计算</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/架构/">架构</a></li></ul>
-
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-  
-    <article id="post-nginx将日志通过rsyslog保存" class="article article-type-post" itemscope
-         itemprop="blogPost">
-
-    <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017-01-11/nginx将日志通过rsyslog保存.html">nginx将日志通过rsyslog保存</a>
-    </h1>
-  
-
-
-    </header>
-
-    <div class="article-meta">
-        <div class="article-datetime">
-  <a href="/2017-01-11/nginx将日志通过rsyslog保存.html" class="article-date"><time datetime="2017-01-11T10:53:49.000Z" itemprop="datePublished">2017-01-11</time></a>
-</div>
-
-        
-        <div class="article-author">刘博平</div>
-        
-        
-
-    </div>
-    <div class="article-inner">
-
-        <div class="article-entry" itemprop="articleBody">
-            
-            <blockquote>
-<p>nginx版本大于1.7.1才可以</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">error_log syslog:server=unix:/dev/log,facility=local7,tag=nginx,severity=error;</div><div class="line">access_log syslog:server=unix:/dev/log,facility=local7,tag=nginx,severity=info main;</div></pre></td></tr></table></figure>
-<p>剩下的事情交给rsyslog吧，是保存到本地，还是发送给远端集中管理，都随意。</p>
-
-            
-        </div>
-
-        
-        
-
-        
-
-        <footer class="article-footer">
-            
-            
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-  
 
 
   <div id="page-nav">
@@ -815,7 +831,7 @@
   
   <div class="sidebar-module">
     <h4>归档</h4>
-    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/11/">十一月 2017</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/10/">十月 2017</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/09/">九月 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/08/">八月 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/06/">六月 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/02/">二月 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/01/">一月 2017</a><span class="sidebar-module-list-count">18</span></li></ul>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/12/">十二月 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/11/">十一月 2017</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/10/">十月 2017</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/09/">九月 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/08/">八月 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/06/">六月 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/02/">二月 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/01/">一月 2017</a><span class="sidebar-module-list-count">18</span></li></ul>
   </div>
 
 
@@ -824,6 +840,14 @@
   <div class="sidebar-module">
     <h4>最新文章</h4>
     <ul class="sidebar-module-list">
+      
+        <li>
+          <a href="/2017-12-05/使用git自动部署项目.html">使用git自动部署项目</a>
+        </li>
+      
+        <li>
+          <a href="/2017-11-07/2018年推荐购买361°运动系列服装.html">2018年推荐购买361°运动系列服装</a>
+        </li>
       
         <li>
           <a href="/2017-11-06/青春痘粉刺的罪魁祸首——碱性洗面奶.html">青春痘粉刺的罪魁祸首——碱性洗面奶</a>
@@ -835,14 +859,6 @@
       
         <li>
           <a href="/2017-10-30/一键安装SSR酸酸乳最新版auth-chain-b.html">一键安装SSR酸酸乳最新版auth_chain_b</a>
-        </li>
-      
-        <li>
-          <a href="/2017-10-23/ssh走shadowsocks-r-防止GFW干扰.html">ssh走shadowsocks/r 防止GFW干扰</a>
-        </li>
-      
-        <li>
-          <a href="/2017-10-18/周易算出逃课学生.html">周易算出逃课学生</a>
         </li>
       
     </ul>
