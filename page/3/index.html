@@ -105,6 +105,72 @@
         <div class="col-sm-8 blog-main">
             
   
+    <article id="post-如何利用pdnsd和PRCDNS防止DNS劫持" class="article article-type-post" itemscope
+         itemprop="blogPost">
+
+    <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017-01-28/如何利用pdnsd和PRCDNS防止DNS劫持.html">如何利用pdnsd和PRCDNS防止DNS劫持</a>
+    </h1>
+  
+
+
+    </header>
+
+    <div class="article-meta">
+        <div class="article-datetime">
+  <a href="/2017-01-28/如何利用pdnsd和PRCDNS防止DNS劫持.html" class="article-date"><time datetime="2017-01-27T16:51:00.000Z" itemprop="datePublished">2017-01-28</time></a>
+</div>
+
+        
+        <div class="article-author">刘博平</div>
+        
+        
+
+    </div>
+    <div class="article-inner">
+
+        <div class="article-entry" itemprop="articleBody">
+            
+            <blockquote>
+<p>防止运营商DNS劫持，DNS污染，DNS劫持怎么办，DNS污染怎么办，DNS污染怎么解决，DNS污染太严重</p>
+</blockquote>
+<p>DNS劫持主要是运营商以盈利为目的，进行的域名解析干扰，比如广告和强制使用缓存。几年前很多教程会告诉你使用OPENDNS或者114、百度、阿里的公共DNS来解决，运营商也提升了劫持技术，针对UDP协议，伪造DNS查询结果。目前DNS劫持主要针对UDP协议，TCP还没有被劫持，目前国内公共DNS支持TCP的也只有114，可以预见基于TCP协议的DNS查询应该没事，因为门槛高，用的人比较少。</p>
+<p>安装pdnsd，将DNS地址指向pdnsd所在的IP，让pdnsd通过TCP协议查询上游DNS，这样就避免了DNS劫持，上游服务器可以选择114、OPENDNS和PRCDNS，但是OPENDNS对CDN不友好，会把淘宝的图片CDN网址img.alicdn.com指向香港，所以不推荐使用。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>pdnsd不支持Windows，建议Windows用户使用UNbound。<br>pdnsd可以安装在<strong>openwrt</strong>（淘宝有刷好的几十元路由器）、<strong>树莓派</strong>（淘宝二手50元不带电源线）、<strong>x86的工控机小主机</strong>（淘宝上几十元可能买到），推荐后2种，路由器性能太低，可玩性不高。</p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>根据不同的需求，我推荐pdnsd的2种配置。</p>
+<ul>
+<li><p><strong>普通用户</strong><br>使用114DNS，114DNS还有其他功能<br>纯净 无劫持   无需再忍受被强扭去看广告或粗俗网站之痛苦<br>服务地址为：114.114.114.114 和 114.114.115.115<br>拦截 钓鱼病毒木马网站  增强网银、证券、购物、游戏、隐私信息安全<br>服务地址为：114.114.114.119 和 114.114.115.119<br>学校或家长可选拦截 色情网站  保护少年儿童免受网络色情内容的毒害<br>服务地址为：114.114.114.110 和 114.114.115.110<br>详见114DNS官网<br>下面是pdnsd的配置：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">global &#123;</div><div class="line">	perm_cache=2048;</div><div class="line">	cache_dir=<span class="string">"/var/cache/pdnsd"</span>;</div><div class="line">	run_as=<span class="string">"pdnsd"</span>;</div><div class="line">	server_ip = 0.0.0.0;  // Use eth0 here <span class="keyword">if</span> you want to allow other</div><div class="line">	server_port = 53;	// machines on your network to query pdnsd.</div><div class="line">	status_ctl = on;</div><div class="line">  	paranoid=on;</div><div class="line">	query_method=tcp_only;	// pdnsd must be compiled with tcp 只用tcp协议</div><div class="line">	min_ttl=1d;       // Retain cached entries at least 15 minutes.</div><div class="line">	max_ttl=1w;	   // One week.</div><div class="line">	timeout=10;        // Global timeout option (10 seconds).</div><div class="line">&#125;</div><div class="line">server &#123;</div><div class="line">	label = <span class="string">"114dns"</span>; //设置114DNS作为上游服务器</div><div class="line">	ip = 114.114.114.114,114.114.115.115;</div><div class="line">	timeout = 10;</div><div class="line">	port = 53; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>高级用户</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">global &#123;</div><div class="line">	perm_cache=2048;</div><div class="line">	cache_dir=<span class="string">"/var/cache/pdnsd"</span>;</div><div class="line">	run_as=<span class="string">"pdnsd"</span>;</div><div class="line">	server_ip = 0.0.0.0;  // Use eth0 here <span class="keyword">if</span> you want to allow other</div><div class="line">	server_port = 53;	// machines on your network to query pdnsd.</div><div class="line">	status_ctl = on;</div><div class="line">  	paranoid=on;</div><div class="line">	query_method=tcp_only;	// pdnsd must be compiled with tcp 只用tcp协议</div><div class="line">	min_ttl=1d;       // Retain cached entries at least 15 minutes.</div><div class="line">	max_ttl=1w;	   // One week.</div><div class="line">	timeout=10;        // Global timeout option (10 seconds).</div><div class="line">	par_queries=1;  一定要加，否则会同时查询114，114会抢答查询结果</div><div class="line">&#125;</div><div class="line">server &#123;</div><div class="line">	label = <span class="string">"prcdns"</span>; //设置PRCDNS作为上游服务器</div><div class="line">	ip = 23.106.151.177;</div><div class="line">	timeout = 10;</div><div class="line">	port = 3535; </div><div class="line">&#125;</div><div class="line">server &#123;</div><div class="line">	label = <span class="string">"114dns"</span>; //备用114DNS作为上游服务器</div><div class="line">	ip = 114.114.114.114,114.114.115.115;</div><div class="line">	timeout = 10;</div><div class="line">	port = 53; </div><div class="line">&#125;</div></pre></td></tr></table></figure></li>
+</ul>
+
+            
+        </div>
+
+        
+        
+
+        
+
+        <footer class="article-footer">
+            
+            
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DNS/">DNS</a></li></ul>
+
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+  
     <article id="post-pdnsd配合PRCDNS搭建DNS防止DNS劫持" class="article article-type-post" itemscope
          itemprop="blogPost">
 
@@ -707,74 +773,6 @@
 
 
   
-    <article id="post-我好像发现了PRC为什么连接海外速度那么慢的秘密了" class="article article-type-post" itemscope
-         itemprop="blogPost">
-
-    <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017-01-13/我好像发现了PRC为什么连接海外速度那么慢的秘密了.html">我好像发现了PRC为什么连接海外速度那么慢的秘密了</a>
-    </h1>
-  
-
-
-    </header>
-
-    <div class="article-meta">
-        <div class="article-datetime">
-  <a href="/2017-01-13/我好像发现了PRC为什么连接海外速度那么慢的秘密了.html" class="article-date"><time datetime="2017-01-13T07:48:20.000Z" itemprop="datePublished">2017-01-13</time></a>
-</div>
-
-        
-        <div class="article-author">刘博平</div>
-        
-        
-
-    </div>
-    <div class="article-inner">
-
-        <div class="article-entry" itemprop="articleBody">
-            
-            <h3 id="原因就是运营商也要买出口带宽，为了节省成本所以就买了一个你感受到的小水管。"><a href="#原因就是运营商也要买出口带宽，为了节省成本所以就买了一个你感受到的小水管。" class="headerlink" title="原因就是运营商也要买出口带宽，为了节省成本所以就买了一个你感受到的小水管。"></a>原因就是运营商也要买出口带宽，为了节省成本所以就买了一个你感受到的小水管。</h3><h2 id="推理分析Why？"><a href="#推理分析Why？" class="headerlink" title="推理分析Why？"></a>推理分析Why？</h2><p>我们先看下百度百科<a href="http://baike.baidu.com/view/5316667.htm" target="_blank" rel="external">美国PR机房</a>，里面写着<code>与大陆电信直连</code>。再看看另外一个关键字<code>kr机房</code>，说的就更详细了，<a href="http://www.idcwk.com/us/kt/" target="_blank" rel="external">美国KT机房是最早对中国提供服务的美国机房</a>，由此我们可以推测一个完整的路由线路：PRC的网络通过光缆出海，到达KT、PR两个机房，然后再访问目的网站，问题就出在这个机房里面，运营商是向机房买了多少带宽呢？不知道。这点我们不难理解，200x年的时候，游戏服务器都是分电信、联通的，北方玩家玩电信服务器的游戏，会特别卡，原因就在于2大运营商要向对方支付巨额宽带费用，而部分二级机房偷偷做了路由，又被禁止。同理今天，我们访问github、Maven、pip……这些特别卡，原因是一样的。</p>
-<h2 id="怎么办How？"><a href="#怎么办How？" class="headerlink" title="怎么办How？"></a>怎么办How？</h2><p>像上面那些二级机房一样，买KT、PR两个机房的服务器进行中转。因为你的中转服务器和运营商的服务器在一个机房内，是不算运营商的带宽费用的。</p>
-<ul>
-<li><a href="https://www.krypt.com/" target="_blank" rel="external">kt机房</a></li>
-<li><a href="https://www.quadranet.com/" target="_blank" rel="external">pr机房</a></li>
-</ul>
-<blockquote>
-<p>上面2个机房价格比较高，不太适合个人购买，个人可以选择将机房搭建在这两个机房的VPS提供商。我分享一个我找到的这样的VPS提供商，该VPS不但提供位置在PR机房的VPS，还支持支付宝付款。</p>
-</blockquote>
-<p><code>注意：不是所有的套餐都直连，要按照下面的步骤找到。</code></p>
-<ol>
-<li><a href="http://t.cn/RMJsF2z" target="_blank" rel="external">点击进入VPS官网</a></li>
-<li>进去之后，先注册并登录</li>
-<li>进入 “client area” ，再进入“ Services ”，“ Order new Services ”</li>
-<li>然后就看到第一个和第二个套餐，都带有“ LOS ANGELES - CHINA DIRECT ROUTE ”字样的，意思就是洛杉矶中国直连。</li>
-<li>然后就可以“ Order Now ”，下单，用支付宝付款了。</li>
-</ol>
-<h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p>无任何优化，在公司看油管4K稍有卡顿，1080P没事，速度大概8000kb的样子。</p>
-
-            
-        </div>
-
-        
-        
-
-        
-
-        <footer class="article-footer">
-            
-            
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-  
 
 
   <div id="page-nav">
@@ -814,7 +812,7 @@
   
   <div class="sidebar-module">
     <h4>Tags</h4>
-    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/CN2/">CN2</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/DNS/">DNS</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/SS/">SS</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/VPS/">VPS</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/主机配置/">主机配置</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/云计算/">云计算</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/双线主机/">双线主机</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/攒机/">攒机</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/架构/">架构</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/游戏/">游戏</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/理财/">理财</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/网络/">网络</a><span class="sidebar-module-list-count">1</span></li></ul>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/CN2/">CN2</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/DNS/">DNS</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Excel/">Excel</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Python/">Python</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/SS/">SS</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/VPS/">VPS</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/主机配置/">主机配置</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/云计算/">云计算</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/双线主机/">双线主机</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/攒机/">攒机</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/架构/">架构</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/游戏/">游戏</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/理财/">理财</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/网络/">网络</a><span class="sidebar-module-list-count">1</span></li></ul>
   </div>
 
 
@@ -823,7 +821,7 @@
   <div class="sidebar-module">
     <h4>Tag Cloud</h4>
     <p class="tagcloud">
-      <a href="/tags/CN2/" style="font-size: 15px;">CN2</a> <a href="/tags/DNS/" style="font-size: 15px;">DNS</a> <a href="/tags/SS/" style="font-size: 10px;">SS</a> <a href="/tags/VPS/" style="font-size: 20px;">VPS</a> <a href="/tags/主机配置/" style="font-size: 10px;">主机配置</a> <a href="/tags/云计算/" style="font-size: 10px;">云计算</a> <a href="/tags/双线主机/" style="font-size: 10px;">双线主机</a> <a href="/tags/攒机/" style="font-size: 10px;">攒机</a> <a href="/tags/架构/" style="font-size: 10px;">架构</a> <a href="/tags/游戏/" style="font-size: 10px;">游戏</a> <a href="/tags/理财/" style="font-size: 10px;">理财</a> <a href="/tags/网络/" style="font-size: 10px;">网络</a>
+      <a href="/tags/CN2/" style="font-size: 15px;">CN2</a> <a href="/tags/DNS/" style="font-size: 15px;">DNS</a> <a href="/tags/Excel/" style="font-size: 10px;">Excel</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/SS/" style="font-size: 10px;">SS</a> <a href="/tags/VPS/" style="font-size: 20px;">VPS</a> <a href="/tags/主机配置/" style="font-size: 10px;">主机配置</a> <a href="/tags/云计算/" style="font-size: 10px;">云计算</a> <a href="/tags/双线主机/" style="font-size: 10px;">双线主机</a> <a href="/tags/攒机/" style="font-size: 10px;">攒机</a> <a href="/tags/架构/" style="font-size: 10px;">架构</a> <a href="/tags/游戏/" style="font-size: 10px;">游戏</a> <a href="/tags/理财/" style="font-size: 10px;">理财</a> <a href="/tags/网络/" style="font-size: 10px;">网络</a>
     </p>
   </div>
 
@@ -831,7 +829,7 @@
   
   <div class="sidebar-module">
     <h4>归档</h4>
-    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/12/">十二月 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/11/">十一月 2017</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/10/">十月 2017</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/09/">九月 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/08/">八月 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/06/">六月 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/02/">二月 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/01/">一月 2017</a><span class="sidebar-module-list-count">18</span></li></ul>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/12/">十二月 2017</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/11/">十一月 2017</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/10/">十月 2017</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/09/">九月 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/08/">八月 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/06/">六月 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/02/">二月 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/01/">一月 2017</a><span class="sidebar-module-list-count">18</span></li></ul>
   </div>
 
 
@@ -840,6 +838,10 @@
   <div class="sidebar-module">
     <h4>最新文章</h4>
     <ul class="sidebar-module-list">
+      
+        <li>
+          <a href="/2017-12-20/Python读写Excel.html">Python读写Excel</a>
+        </li>
       
         <li>
           <a href="/2017-12-05/使用git自动部署项目.html">使用git自动部署项目</a>
@@ -855,10 +857,6 @@
       
         <li>
           <a href="/2017-11-03/创建npm项目的正确姿势.html">创建npm项目的正确姿势</a>
-        </li>
-      
-        <li>
-          <a href="/2017-10-30/一键安装SSR酸酸乳最新版auth-chain-b.html">一键安装SSR酸酸乳最新版auth_chain_b</a>
         </li>
       
     </ul>

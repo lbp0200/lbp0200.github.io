@@ -105,6 +105,60 @@
         <div class="col-sm-8 blog-main">
             
   
+    <article id="post-Python读写Excel" class="article article-type-post" itemscope
+         itemprop="blogPost">
+
+    <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017-12-20/Python读写Excel.html">Python读写Excel</a>
+    </h1>
+  
+
+
+    </header>
+
+    <div class="article-meta">
+        <div class="article-datetime">
+  <a href="/2017-12-20/Python读写Excel.html" class="article-date"><time datetime="2017-12-20T05:02:00.000Z" itemprop="datePublished">2017-12-20</time></a>
+</div>
+
+        
+        <div class="article-author">丑锉穷</div>
+        
+        
+
+    </div>
+    <div class="article-inner">
+
+        <div class="article-entry" itemprop="articleBody">
+            
+            <h2 id="openpyxl"><a href="#openpyxl" class="headerlink" title="openpyxl"></a>openpyxl</h2><h4 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h4><p><a href="https://openpyxl.readthedocs.io/en/default/" target="_blank" rel="external">https://openpyxl.readthedocs.io/en/default/</a></p>
+<h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p><code>pip install openpyxl</code></p>
+<h4 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> openpyxl <span class="keyword">import</span> Workbook</div><div class="line">wb = Workbook()</div><div class="line"></div><div class="line"><span class="comment"># grab the active worksheet</span></div><div class="line">ws = wb.active</div><div class="line"></div><div class="line"><span class="comment"># Data can be assigned directly to cells</span></div><div class="line">ws[<span class="string">'A1'</span>] = <span class="number">42</span></div><div class="line"></div><div class="line"><span class="comment"># Rows can also be appended</span></div><div class="line">ws.append([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>])</div><div class="line"></div><div class="line"><span class="comment"># Python types will automatically be converted</span></div><div class="line"><span class="keyword">import</span> datetime</div><div class="line">ws[<span class="string">'A2'</span>] = datetime.datetime.now()</div><div class="line"></div><div class="line"><span class="comment"># Save the file</span></div><div class="line">wb.save(<span class="string">"sample.xlsx"</span>)</div></pre></td></tr></table></figure>
+            
+        </div>
+
+        
+        
+
+        
+
+        <footer class="article-footer">
+            
+            
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Excel/">Excel</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+  
     <article id="post-使用git自动部署项目" class="article article-type-post" itemscope
          itemprop="blogPost">
 
@@ -674,63 +728,6 @@
 
 
   
-    <article id="post-突然对人生感到迷茫该怎么办" class="article article-type-post" itemscope
-         itemprop="blogPost">
-
-    <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017-08-10/突然对人生感到迷茫该怎么办.html">突然对人生感到迷茫该怎么办</a>
-    </h1>
-  
-
-
-    </header>
-
-    <div class="article-meta">
-        <div class="article-datetime">
-  <a href="/2017-08-10/突然对人生感到迷茫该怎么办.html" class="article-date"><time datetime="2017-08-10T06:20:23.000Z" itemprop="datePublished">2017-08-10</time></a>
-</div>
-
-        
-        <div class="article-author">丑锉穷</div>
-        
-        
-
-    </div>
-    <div class="article-inner">
-
-        <div class="article-entry" itemprop="articleBody">
-            
-            <blockquote>
-<p>很多青年对人生感到迷茫，不知何去何从，人生突然失去了目标</p>
-</blockquote>
-<p>建议停下忙碌的脚步，多读读关于人生的书籍，多思考，就当休息一下，准备更远的行程。</p>
-<h2 id="少有人走的路（套装共4册-白金升级版）"><a href="#少有人走的路（套装共4册-白金升级版）" class="headerlink" title="少有人走的路（套装共4册 白金升级版）"></a><a href="http://union-click.jd.com/jdc?d=SCUhuA" target="_blank" rel="external">少有人走的路（套装共4册 白金升级版）</a></h2><p>一本人人可读，人人可受益的经典心灵读物 张德芬、赵薇、任志强、胡因梦、杨幂等名人感动推荐</p>
-<p><img src="http://img14.360buyimg.com/n1/jfs/t1996/186/2943819584/299705/23f75a5a/56fb38e1Nc203daba.jpg" alt="《少有人走的路》"></p>
-<h2 id="遇见未知的自己-修订版"><a href="#遇见未知的自己-修订版" class="headerlink" title="遇见未知的自己 修订版"></a><a href="http://union-click.jd.com/jdc?d=bx6RAe" target="_blank" rel="external">遇见未知的自己 修订版</a></h2><p><img src="http://img14.360buyimg.com/n1/jfs/t1996/186/2943819584/299705/23f75a5a/56fb38e1Nc203daba.jpg" alt="遇见未知的自己 修订版"></p>
-
-            
-        </div>
-
-        
-        
-
-        
-
-        <footer class="article-footer">
-            
-            
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-  
 
 
   <div id="page-nav">
@@ -770,7 +767,7 @@
   
   <div class="sidebar-module">
     <h4>Tags</h4>
-    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/CN2/">CN2</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/DNS/">DNS</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/SS/">SS</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/VPS/">VPS</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/主机配置/">主机配置</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/云计算/">云计算</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/双线主机/">双线主机</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/攒机/">攒机</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/架构/">架构</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/游戏/">游戏</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/理财/">理财</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/网络/">网络</a><span class="sidebar-module-list-count">1</span></li></ul>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/CN2/">CN2</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/DNS/">DNS</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Excel/">Excel</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Python/">Python</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/SS/">SS</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/VPS/">VPS</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/主机配置/">主机配置</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/云计算/">云计算</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/双线主机/">双线主机</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/攒机/">攒机</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/架构/">架构</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/游戏/">游戏</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/理财/">理财</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/网络/">网络</a><span class="sidebar-module-list-count">1</span></li></ul>
   </div>
 
 
@@ -779,7 +776,7 @@
   <div class="sidebar-module">
     <h4>Tag Cloud</h4>
     <p class="tagcloud">
-      <a href="/tags/CN2/" style="font-size: 15px;">CN2</a> <a href="/tags/DNS/" style="font-size: 15px;">DNS</a> <a href="/tags/SS/" style="font-size: 10px;">SS</a> <a href="/tags/VPS/" style="font-size: 20px;">VPS</a> <a href="/tags/主机配置/" style="font-size: 10px;">主机配置</a> <a href="/tags/云计算/" style="font-size: 10px;">云计算</a> <a href="/tags/双线主机/" style="font-size: 10px;">双线主机</a> <a href="/tags/攒机/" style="font-size: 10px;">攒机</a> <a href="/tags/架构/" style="font-size: 10px;">架构</a> <a href="/tags/游戏/" style="font-size: 10px;">游戏</a> <a href="/tags/理财/" style="font-size: 10px;">理财</a> <a href="/tags/网络/" style="font-size: 10px;">网络</a>
+      <a href="/tags/CN2/" style="font-size: 15px;">CN2</a> <a href="/tags/DNS/" style="font-size: 15px;">DNS</a> <a href="/tags/Excel/" style="font-size: 10px;">Excel</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/SS/" style="font-size: 10px;">SS</a> <a href="/tags/VPS/" style="font-size: 20px;">VPS</a> <a href="/tags/主机配置/" style="font-size: 10px;">主机配置</a> <a href="/tags/云计算/" style="font-size: 10px;">云计算</a> <a href="/tags/双线主机/" style="font-size: 10px;">双线主机</a> <a href="/tags/攒机/" style="font-size: 10px;">攒机</a> <a href="/tags/架构/" style="font-size: 10px;">架构</a> <a href="/tags/游戏/" style="font-size: 10px;">游戏</a> <a href="/tags/理财/" style="font-size: 10px;">理财</a> <a href="/tags/网络/" style="font-size: 10px;">网络</a>
     </p>
   </div>
 
@@ -787,7 +784,7 @@
   
   <div class="sidebar-module">
     <h4>归档</h4>
-    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/12/">十二月 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/11/">十一月 2017</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/10/">十月 2017</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/09/">九月 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/08/">八月 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/06/">六月 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/02/">二月 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/01/">一月 2017</a><span class="sidebar-module-list-count">18</span></li></ul>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/12/">十二月 2017</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/11/">十一月 2017</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/10/">十月 2017</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/09/">九月 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/08/">八月 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/06/">六月 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/02/">二月 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/01/">一月 2017</a><span class="sidebar-module-list-count">18</span></li></ul>
   </div>
 
 
@@ -796,6 +793,10 @@
   <div class="sidebar-module">
     <h4>最新文章</h4>
     <ul class="sidebar-module-list">
+      
+        <li>
+          <a href="/2017-12-20/Python读写Excel.html">Python读写Excel</a>
+        </li>
       
         <li>
           <a href="/2017-12-05/使用git自动部署项目.html">使用git自动部署项目</a>
@@ -811,10 +812,6 @@
       
         <li>
           <a href="/2017-11-03/创建npm项目的正确姿势.html">创建npm项目的正确姿势</a>
-        </li>
-      
-        <li>
-          <a href="/2017-10-30/一键安装SSR酸酸乳最新版auth-chain-b.html">一键安装SSR酸酸乳最新版auth_chain_b</a>
         </li>
       
     </ul>
