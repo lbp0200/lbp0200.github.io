@@ -105,6 +105,64 @@
         <div class="col-sm-8 blog-main">
             
   
+    <article id="post-SS速度慢——最大的可能是被运营商QoS了" class="article article-type-post" itemscope
+         itemprop="blogPost">
+
+    <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017-02-21/SS速度慢——最大的可能是被运营商QoS了.html">SS速度慢——最大的可能是被运营商QoS了</a>
+    </h1>
+  
+
+
+    </header>
+
+    <div class="article-meta">
+        <div class="article-datetime">
+  <a href="/2017-02-21/SS速度慢——最大的可能是被运营商QoS了.html" class="article-date"><time datetime="2017-02-21T04:03:00.000Z" itemprop="datePublished">2017-02-21</time></a>
+</div>
+
+        
+        <div class="article-author">刘博平</div>
+        
+        
+
+    </div>
+    <div class="article-inner">
+
+        <div class="article-entry" itemprop="articleBody">
+            
+            <blockquote>
+<p>SS速度慢怎么办？这是一个经常被问起的问题。原因有千万种，最大的可能是网络被运营商QoS了。</p>
+</blockquote>
+<h3 id="什么是QoS？"><a href="#什么是QoS？" class="headerlink" title="什么是QoS？"></a>什么是QoS？</h3><p>简单点说就是：运营商为了优化用户的网络体验，会区分网络应用的优先级，最最最常见的优先级规则是使用80端口的http包优先级最高。</p>
+<h3 id="QoS的影响"><a href="#QoS的影响" class="headerlink" title="QoS的影响"></a>QoS的影响</h3><p>当SS网络包通过运营商的路由，路由会说：“大家不要动，让80端口的http包先走”。这样的路由策略，白天可能还好，晚上上网高峰时，SS速度10KB就非常正常了，更有可能的是运营商干脆限速，无论什么时间速度都不会超过30KB。</p>
+<h3 id="突破QoS"><a href="#突破QoS" class="headerlink" title="突破QoS"></a>突破QoS</h3><p>解决办法当然是把SS伪装成走80端口的http了，原版的SS是不支持的，但是破娃开发的SSR是支持的，伪装的办法除了在服务器端用80端口外，还支持4种伪装协议。<br>伪装后的效果非常好，我曾经在山东农村年付350元移动宽带上，成功将SSR的速度跑到10M以上，轻松搞定1080P。<br>因为各地运营商的QoS规则千差万别，没有一劳永逸的办法，需要不断的测试各种伪装的效果，要求有很强的动手能力，这里就不写截图的文档了，高手请参考SSR的文档，小白用户可以请高手帮忙。</p>
+
+            
+        </div>
+
+        
+        
+
+        
+
+        <footer class="article-footer">
+            
+            
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SS/">SS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网络/">网络</a></li></ul>
+
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+  
     <article id="post-lol英雄联盟游戏主机配置推荐" class="article article-type-post" itemscope
          itemprop="blogPost">
 
@@ -713,68 +771,6 @@
 
 
   
-    <article id="post-怎样使用Hexo像WordPress那样在线可视化写博客" class="article article-type-post" itemscope
-         itemprop="blogPost">
-
-    <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017-01-16/怎样使用Hexo像WordPress那样在线可视化写博客.html">怎样使用Hexo像WordPress那样在线可视化写博客</a>
-    </h1>
-  
-
-
-    </header>
-
-    <div class="article-meta">
-        <div class="article-datetime">
-  <a href="/2017-01-16/怎样使用Hexo像WordPress那样在线可视化写博客.html" class="article-date"><time datetime="2017-01-16T06:24:40.000Z" itemprop="datePublished">2017-01-16</time></a>
-</div>
-
-        
-        <div class="article-author">刘博平</div>
-        
-        
-
-    </div>
-    <div class="article-inner">
-
-        <div class="article-entry" itemprop="articleBody">
-            
-            <p>Hexo有一款插件<code>hexo-admin</code>即可轻松实现，地址：(<a href="https://github.com/jaredly/hexo-admin" target="_blank" rel="external">https://github.com/jaredly/hexo-admin</a>)<br>它能够管理文章，添加分类和标签，也可以一键部署。<br>只需访问: <a href="http://localhost:4000/admin" target="_blank" rel="external">http://localhost:4000/admin</a>，即可完成所有操作。</p>
-<p>这里重点说说<code>一键部署</code></p>
-<ol>
-<li><p>首先配置<code>_config.yml</code>，新增</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="attr">admin:</span></div><div class="line"><span class="attr">  deployCommand:</span> <span class="string">'sh ./hexo-deploy.sh'</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>新增<code>hexo-deploy.sh</code>文件，内容如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/env sh</div><div class="line">rm -rf public</div><div class="line">hexo deploy --generate</div></pre></td></tr></table></figure>
-</li>
-<li><p>最后，写完博客，点<code>Deploy</code>-<code>deploy</code>，就轻松地把新博文发布啦。</p>
-</li>
-</ol>
-
-            
-        </div>
-
-        
-        
-
-        
-
-        <footer class="article-footer">
-            
-            
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-  
 
 
   <div id="page-nav">
@@ -831,7 +827,7 @@
   
   <div class="sidebar-module">
     <h4>归档</h4>
-    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/01/">一月 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/12/">十二月 2017</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/11/">十一月 2017</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/10/">十月 2017</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/09/">九月 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/08/">八月 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/06/">六月 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/02/">二月 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/01/">一月 2017</a><span class="sidebar-module-list-count">18</span></li></ul>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/01/">一月 2018</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/12/">十二月 2017</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/11/">十一月 2017</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/10/">十月 2017</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/09/">九月 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/08/">八月 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/06/">六月 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/02/">二月 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/01/">一月 2017</a><span class="sidebar-module-list-count">18</span></li></ul>
   </div>
 
 
@@ -840,6 +836,10 @@
   <div class="sidebar-module">
     <h4>最新文章</h4>
     <ul class="sidebar-module-list">
+      
+        <li>
+          <a href="/2018-01-12/猪才相信“风口上的猪”.html">猪才相信“风口上的猪”</a>
+        </li>
       
         <li>
           <a href="/2018-01-08/MySQL导入CSV文件数据.html">MySQL导入CSV文件数据</a>
@@ -855,10 +855,6 @@
       
         <li>
           <a href="/2017-11-07/2018年推荐购买361°运动系列服装.html">2018年推荐购买361°运动系列服装</a>
-        </li>
-      
-        <li>
-          <a href="/2017-11-06/青春痘粉刺的罪魁祸首——碱性洗面奶.html">青春痘粉刺的罪魁祸首——碱性洗面奶</a>
         </li>
       
     </ul>
