@@ -21,7 +21,7 @@ QoS的影响当SS网络包通过运营商的路由，路由会说：“大家不
 
 什么是QoS？简单点说就是：运营商为了优化用户的网络体验，会区分网络应用的优先级，最最最常见的优先级规则是使用80端口的http包优先级最高。
 QoS的影响当SS网络包通过运营商的路由，路由会说：“大家不要动，让80端口的http包先走”。这样的路由策略，白天可能还好，晚上上网高峰时，SS速度10KB">
-<meta property="og:updated_time" content="2017-02-21T04:04:48.561Z">
+<meta property="og:updated_time" content="2018-05-09T01:41:12.592Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SS速度慢——最大的可能是被运营商QoS了">
 <meta name="twitter:description" content="SS速度慢怎么办？这是一个经常被问起的问题。原因有千万种，最大的可能是网络被运营商QoS了。
@@ -148,6 +148,20 @@ QoS的影响当SS网络包通过运营商的路由，路由会说：“大家不
 <h3 id="什么是QoS？"><a href="#什么是QoS？" class="headerlink" title="什么是QoS？"></a>什么是QoS？</h3><p>简单点说就是：运营商为了优化用户的网络体验，会区分网络应用的优先级，最最最常见的优先级规则是使用80端口的http包优先级最高。</p>
 <h3 id="QoS的影响"><a href="#QoS的影响" class="headerlink" title="QoS的影响"></a>QoS的影响</h3><p>当SS网络包通过运营商的路由，路由会说：“大家不要动，让80端口的http包先走”。这样的路由策略，白天可能还好，晚上上网高峰时，SS速度10KB就非常正常了，更有可能的是运营商干脆限速，无论什么时间速度都不会超过30KB。</p>
 <h3 id="突破QoS"><a href="#突破QoS" class="headerlink" title="突破QoS"></a>突破QoS</h3><p>解决办法当然是把SS伪装成走80端口的http了，原版的SS是不支持的，但是破娃开发的SSR是支持的，伪装的办法除了在服务器端用80端口外，还支持4种伪装协议。<br>伪装后的效果非常好，我曾经在山东农村年付350元移动宽带上，成功将SSR的速度跑到10M以上，轻松搞定1080P。<br>因为各地运营商的QoS规则千差万别，没有一劳永逸的办法，需要不断的测试各种伪装的效果，要求有很强的动手能力，这里就不写截图的文档了，高手请参考SSR的文档，小白用户可以请高手帮忙。</p>
+<hr>
+<blockquote>
+<p>2018年05月09日 星期三 更新</p>
+</blockquote>
+<p>附上SSR酸酸乳的备份地址：<a href="https://github.com/shadowsocksr-rm" target="_blank" rel="external">https://github.com/shadowsocksr-rm</a></p>
+<h3 id="VPS选择："><a href="#VPS选择：" class="headerlink" title="VPS选择："></a>VPS选择：</h3><ul>
+<li>新手选择<a href="https://polr.liuboping.com/www-lbp" target="_blank" rel="external">搬瓦工</a>，在线shell管理，省去xshell、putty的安装</li>
+<li>进阶选择<a href="http://polr.liuboping.com/PrgTf" target="_blank" rel="external">Vultr</a>，全球多节点选择，随时切换，不推荐东京。</li>
+</ul>
+<h3 id="酸酸乳优化技巧"><a href="#酸酸乳优化技巧" class="headerlink" title="酸酸乳优化技巧"></a>酸酸乳优化技巧</h3><ul>
+<li>用80端口</li>
+<li>酸酸乳配置用<code>config.json</code>默认参数就好</li>
+<li>开启BBR，速度会更好，教程<a href="https://github.com/iMeiji/shadowsocks_install/wiki/%E5%BC%80%E5%90%AFTCP-BBR%E6%8B%A5%E5%A1%9E%E6%8E%A7%E5%88%B6%E7%AE%97%E6%B3%95" target="_blank" rel="external">https://github.com/iMeiji/shadowsocks_install/wiki/%E5%BC%80%E5%90%AFTCP-BBR%E6%8B%A5%E5%A1%9E%E6%8E%A7%E5%88%B6%E7%AE%97%E6%B3%95</a></li>
+</ul>
 
             
         </div>
