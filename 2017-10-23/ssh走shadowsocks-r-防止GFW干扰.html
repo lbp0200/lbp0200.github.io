@@ -9,19 +9,17 @@
         
         丑锉穷的博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="ssh连接国外VPS，会被GFW检测出，并进行干扰，丢包、速度慢，同时也提高了风险，因为如果大流量连接这个VPS，就可能是SSR商人站点，你的IP用ssh连接，说明你可能就是站长，擒贼先擒王的道理，相信你们都懂得。
-解决办法也很简单，让ssh连接走shadowsocks/r、v2ray的socks5就好了。12345cat ~/.ssh/config Host 123.123.123.123 *.">
+    <meta name="description" content="ssh连接国外VPS，会被GFW检测出，并进行干扰，丢包、速度慢，同时也提高了风险，因为如果大流量连接这个VPS，就可能是SSR商人站点，你的IP用ssh连接，说明你可能就是站长，擒贼先擒王的道理，相信你们都懂得。 解决办法也很简单，让ssh连接走shadowsocks/r、v2ray的socks5就好了。12345cat ~/.ssh/config Host 123.123.123.123 *.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ssh走shadowsocks/r 防止GFW干扰">
+<meta property="og:title" content="ssh走shadowsocks&#x2F;r 防止GFW干扰">
 <meta property="og:url" content="http://www.liuboping.com/2017-10-23/ssh走shadowsocks-r-防止GFW干扰.html">
 <meta property="og:site_name" content="丑锉穷的博客">
-<meta property="og:description" content="ssh连接国外VPS，会被GFW检测出，并进行干扰，丢包、速度慢，同时也提高了风险，因为如果大流量连接这个VPS，就可能是SSR商人站点，你的IP用ssh连接，说明你可能就是站长，擒贼先擒王的道理，相信你们都懂得。
-解决办法也很简单，让ssh连接走shadowsocks/r、v2ray的socks5就好了。12345cat ~/.ssh/config Host 123.123.123.123 *.">
+<meta property="og:description" content="ssh连接国外VPS，会被GFW检测出，并进行干扰，丢包、速度慢，同时也提高了风险，因为如果大流量连接这个VPS，就可能是SSR商人站点，你的IP用ssh连接，说明你可能就是站长，擒贼先擒王的道理，相信你们都懂得。 解决办法也很简单，让ssh连接走shadowsocks/r、v2ray的socks5就好了。12345cat ~/.ssh/config Host 123.123.123.123 *.">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2017-10-23T03:09:36.203Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ssh走shadowsocks/r 防止GFW干扰">
-<meta name="twitter:description" content="ssh连接国外VPS，会被GFW检测出，并进行干扰，丢包、速度慢，同时也提高了风险，因为如果大流量连接这个VPS，就可能是SSR商人站点，你的IP用ssh连接，说明你可能就是站长，擒贼先擒王的道理，相信你们都懂得。
-解决办法也很简单，让ssh连接走shadowsocks/r、v2ray的socks5就好了。12345cat ~/.ssh/config Host 123.123.123.123 *.">
+<meta name="twitter:title" content="ssh走shadowsocks&#x2F;r 防止GFW干扰">
+<meta name="twitter:description" content="ssh连接国外VPS，会被GFW检测出，并进行干扰，丢包、速度慢，同时也提高了风险，因为如果大流量连接这个VPS，就可能是SSR商人站点，你的IP用ssh连接，说明你可能就是站长，擒贼先擒王的道理，相信你们都懂得。 解决办法也很简单，让ssh连接走shadowsocks/r、v2ray的socks5就好了。12345cat ~/.ssh/config Host 123.123.123.123 *.">
     
     
     
@@ -137,9 +135,9 @@
         <div class="article-entry" itemprop="articleBody">
             
             <p>ssh连接国外VPS，会被GFW检测出，并进行干扰，丢包、速度慢，同时也提高了风险，因为如果大流量连接这个VPS，就可能是SSR商人站点，你的IP用ssh连接，说明你可能就是站长，擒贼先擒王的道理，相信你们都懂得。</p>
-<p>解决办法也很简单，让ssh连接走shadowsocks/r、v2ray的socks5就好了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">cat ~/.ssh/config </div><div class="line"></div><div class="line">Host 123.123.123.123 *.example.com github.com </div><div class="line">	HostName %h </div><div class="line">	ProxyCommand nc -x 127.0.0.1:1080 %h %p</div></pre></td></tr></table></figure></p>
+<p>解决办法也很简单，让ssh连接走shadowsocks/r、v2ray的socks5就好了。<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cat ~/.ssh/config </span><br><span class="line"></span><br><span class="line">Host 123.123.123.123 *.example.com github.com </span><br><span class="line">	HostName %h </span><br><span class="line">	ProxyCommand nc -x 127.0.0.1:1080 %h %p</span><br></pre></td></tr></table></figure></p>
 <p>Host后面是你的VPS IP，最好帮个域名，更方便管理<br><code>127.0.0.1:1080</code>是你本地机器代理的IP：端口</p>
-<p>另外一个好处是很多人clone github时，喜欢用git@github.com的ssh协议，这个办法同样可以加速github clone的速度。</p>
+<p>另外一个好处是很多人clone github时，喜欢用<a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>的ssh协议，这个办法同样可以加速github clone的速度。</p>
 
             
         </div>
@@ -235,7 +233,7 @@
   
   <div class="sidebar-module">
     <h4>归档</h4>
-    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/01/">一月 2018</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/12/">十二月 2017</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/11/">十一月 2017</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/10/">十月 2017</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/09/">九月 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/08/">八月 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/06/">六月 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/02/">二月 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/01/">一月 2017</a><span class="sidebar-module-list-count">18</span></li></ul>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/05/">五月 2018</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/01/">一月 2018</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/12/">十二月 2017</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/11/">十一月 2017</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/10/">十月 2017</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/09/">九月 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/08/">八月 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/06/">六月 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/02/">二月 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/01/">一月 2017</a><span class="sidebar-module-list-count">18</span></li></ul>
   </div>
 
 
@@ -246,23 +244,23 @@
     <ul class="sidebar-module-list">
       
         <li>
+          <a href="/2018-05-22/分享经验-我是如何根治10年双侧鼻窦炎的.html">分享经验-我是如何根治10年双侧鼻窦炎的</a>
+        </li>
+      
+        <li>
+          <a href="/2018-05-20/DNS哪家强？测试一下.html">测试结果告诉你DNS哪家强？</a>
+        </li>
+      
+        <li>
+          <a href="/2018-05-19/Heroku速度快的IP.html">Heroku速度快的IP</a>
+        </li>
+      
+        <li>
           <a href="/2018-01-14/为什么你们家的大数据不赚钱？.html">为什么你们家的大数据不赚钱？</a>
         </li>
       
         <li>
           <a href="/2018-01-12/猪才相信“风口上的猪”.html">猪才相信“风口上的猪”</a>
-        </li>
-      
-        <li>
-          <a href="/2018-01-08/MySQL导入CSV文件数据.html">MySQL导入CSV文件数据</a>
-        </li>
-      
-        <li>
-          <a href="/2017-12-20/Python读写Excel.html">Python读写Excel</a>
-        </li>
-      
-        <li>
-          <a href="/2017-12-05/使用git自动部署项目.html">使用git自动部署项目</a>
         </li>
       
     </ul>

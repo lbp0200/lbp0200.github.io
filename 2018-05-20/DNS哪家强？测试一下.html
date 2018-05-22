@@ -5,21 +5,21 @@
     
     <title>
         
-        我好像发现了PRC为什么连接海外速度那么慢的秘密了 |
+        测试结果告诉你DNS哪家强？ |
         
         丑锉穷的博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="原因就是运营商也要买出口带宽，为了节省成本所以就买了一个你感受到的小水管。推理分析Why？我们先看下百度百科美国PR机房，里面写着与大陆电信直连。再看看另外一个关键字kr机房，说的就更详细了，美国KT机房是最早对中国提供服务的美国机房，由此我们可以推测一个完整的路由线路：PRC的网络通过光缆出海，到达KT、PR两个机房，然后再访问目的网站，问题就出在这个机房里面，运营商是向机房买了多少带宽呢？不知">
+    <meta name="description" content="前言目前DNS最突出的问题是劫持、安全，普通用户无法避免商业DNS偷窥、记录DNS查询，有点三元悖论的味道。 首先，上网得爽，不能打开个网页要等半天。其次，也期望提高安全，尽量避免国内的一些运营商的劫持，稍微牺牲下速度，但是可以接受。 这就看个人的取舍了。 测试准备 测试域名img.alicdn.com，这是阿里的图片CDN域名，淘宝的图片都在这个域名下，全国很多CDN节点非常具有代表性。 测试所">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我好像发现了PRC为什么连接海外速度那么慢的秘密了">
-<meta property="og:url" content="http://www.liuboping.com/2017-01-13/我好像发现了PRC为什么连接海外速度那么慢的秘密了.html">
+<meta property="og:title" content="测试结果告诉你DNS哪家强？">
+<meta property="og:url" content="http://www.liuboping.com/2018-05-20/DNS哪家强？测试一下.html">
 <meta property="og:site_name" content="丑锉穷的博客">
-<meta property="og:description" content="原因就是运营商也要买出口带宽，为了节省成本所以就买了一个你感受到的小水管。推理分析Why？我们先看下百度百科美国PR机房，里面写着与大陆电信直连。再看看另外一个关键字kr机房，说的就更详细了，美国KT机房是最早对中国提供服务的美国机房，由此我们可以推测一个完整的路由线路：PRC的网络通过光缆出海，到达KT、PR两个机房，然后再访问目的网站，问题就出在这个机房里面，运营商是向机房买了多少带宽呢？不知">
+<meta property="og:description" content="前言目前DNS最突出的问题是劫持、安全，普通用户无法避免商业DNS偷窥、记录DNS查询，有点三元悖论的味道。 首先，上网得爽，不能打开个网页要等半天。其次，也期望提高安全，尽量避免国内的一些运营商的劫持，稍微牺牲下速度，但是可以接受。 这就看个人的取舍了。 测试准备 测试域名img.alicdn.com，这是阿里的图片CDN域名，淘宝的图片都在这个域名下，全国很多CDN节点非常具有代表性。 测试所">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-01-13T07:54:50.590Z">
+<meta property="og:updated_time" content="2018-05-21T01:26:53.466Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我好像发现了PRC为什么连接海外速度那么慢的秘密了">
-<meta name="twitter:description" content="原因就是运营商也要买出口带宽，为了节省成本所以就买了一个你感受到的小水管。推理分析Why？我们先看下百度百科美国PR机房，里面写着与大陆电信直连。再看看另外一个关键字kr机房，说的就更详细了，美国KT机房是最早对中国提供服务的美国机房，由此我们可以推测一个完整的路由线路：PRC的网络通过光缆出海，到达KT、PR两个机房，然后再访问目的网站，问题就出在这个机房里面，运营商是向机房买了多少带宽呢？不知">
+<meta name="twitter:title" content="测试结果告诉你DNS哪家强？">
+<meta name="twitter:description" content="前言目前DNS最突出的问题是劫持、安全，普通用户无法避免商业DNS偷窥、记录DNS查询，有点三元悖论的味道。 首先，上网得爽，不能打开个网页要等半天。其次，也期望提高安全，尽量避免国内的一些运营商的劫持，稍微牺牲下速度，但是可以接受。 这就看个人的取舍了。 测试准备 测试域名img.alicdn.com，这是阿里的图片CDN域名，淘宝的图片都在这个域名下，全国很多CDN节点非常具有代表性。 测试所">
     
     
     
@@ -105,14 +105,14 @@
 
     <div class="row">
         <div class="col-sm-8 blog-main">
-            <article id="post-我好像发现了PRC为什么连接海外速度那么慢的秘密了" class="article article-type-post" itemscope
+            <article id="post-DNS哪家强？测试一下" class="article article-type-post" itemscope
          itemprop="blogPost">
 
     <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      我好像发现了PRC为什么连接海外速度那么慢的秘密了
+      测试结果告诉你DNS哪家强？
     </h1>
   
 
@@ -121,11 +121,11 @@
 
     <div class="article-meta">
         <div class="article-datetime">
-  <a href="/2017-01-13/我好像发现了PRC为什么连接海外速度那么慢的秘密了.html" class="article-date"><time datetime="2017-01-13T07:48:20.000Z" itemprop="datePublished">2017-01-13</time></a>
+  <a href="/2018-05-20/DNS哪家强？测试一下.html" class="article-date"><time datetime="2018-05-20T04:42:22.000Z" itemprop="datePublished">2018-05-20</time></a>
 </div>
 
         
-        <div class="article-author">刘博平</div>
+        <div class="article-author">丑锉穷</div>
         
         
 
@@ -134,24 +134,86 @@
 
         <div class="article-entry" itemprop="articleBody">
             
-            <h3 id="原因就是运营商也要买出口带宽，为了节省成本所以就买了一个你感受到的小水管。"><a href="#原因就是运营商也要买出口带宽，为了节省成本所以就买了一个你感受到的小水管。" class="headerlink" title="原因就是运营商也要买出口带宽，为了节省成本所以就买了一个你感受到的小水管。"></a>原因就是运营商也要买出口带宽，为了节省成本所以就买了一个你感受到的小水管。</h3><h2 id="推理分析Why？"><a href="#推理分析Why？" class="headerlink" title="推理分析Why？"></a>推理分析Why？</h2><p>我们先看下百度百科<a href="http://baike.baidu.com/view/5316667.htm" target="_blank" rel="noopener">美国PR机房</a>，里面写着<code>与大陆电信直连</code>。再看看另外一个关键字<code>kr机房</code>，说的就更详细了，<a href="http://www.idcwk.com/us/kt/" target="_blank" rel="noopener">美国KT机房是最早对中国提供服务的美国机房</a>，由此我们可以推测一个完整的路由线路：PRC的网络通过光缆出海，到达KT、PR两个机房，然后再访问目的网站，问题就出在这个机房里面，运营商是向机房买了多少带宽呢？不知道。这点我们不难理解，200x年的时候，游戏服务器都是分电信、联通的，北方玩家玩电信服务器的游戏，会特别卡，原因就在于2大运营商要向对方支付巨额宽带费用，而部分二级机房偷偷做了路由，又被禁止。同理今天，我们访问github、Maven、pip……这些特别卡，原因是一样的。</p>
-<h2 id="怎么办How？"><a href="#怎么办How？" class="headerlink" title="怎么办How？"></a>怎么办How？</h2><p>像上面那些二级机房一样，买KT、PR两个机房的服务器进行中转。因为你的中转服务器和运营商的服务器在一个机房内，是不算运营商的带宽费用的。</p>
-<ul>
-<li><a href="https://www.krypt.com/" target="_blank" rel="noopener">kt机房</a></li>
-<li><a href="https://www.quadranet.com/" target="_blank" rel="noopener">pr机房</a></li>
+            <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>目前DNS最突出的问题是劫持、安全，普通用户无法避免商业DNS偷窥、记录DNS查询，有点三元悖论的味道。</p>
+<p>首先，上网得爽，不能打开个网页要等半天。<br>其次，也期望提高安全，尽量避免国内的一些运营商的劫持，稍微牺牲下速度，但是可以接受。</p>
+<p>这就看个人的取舍了。</p>
+<h3 id="测试准备"><a href="#测试准备" class="headerlink" title="测试准备"></a>测试准备</h3><ul>
+<li>测试域名<code>img.alicdn.com</code>，这是阿里的图片CDN域名，淘宝的图片都在这个域名下，全国很多CDN节点非常具有代表性。</li>
+<li>测试所在网络<code>北京移动</code></li>
+<li>测试结果IP的位置通过<code>https://www.ipip.net/ip.html</code>查询</li>
 </ul>
-<blockquote>
-<p>上面2个机房价格比较高，不太适合个人购买，个人可以选择将机房搭建在这两个机房的VPS提供商。我分享一个我找到的这样的VPS提供商，该VPS不但提供位置在PR机房的VPS，还支持支付宝付款。</p>
+<h3 id="期待最优结果：北京移动"><a href="#期待最优结果：北京移动" class="headerlink" title="期待最优结果：北京移动"></a>期待最优结果：北京移动</h3><blockquote>
+<p>当我打开淘宝时，会打开大量位于<code>img.alicdn.com</code>下的图片，DNS会告诉我去哪个服务器IP下载这个图片，由于CDN的存在，全国会有很多服务器，当然是最近的服务器最优了。</p>
 </blockquote>
-<p><code>注意：不是所有的套餐都直连，要按照下面的步骤找到。</code></p>
-<ol>
-<li><a href="http://t.cn/RMJsF2z" target="_blank" rel="noopener">点击进入VPS官网</a></li>
-<li>进去之后，先注册并登录</li>
-<li>进入 “client area” ，再进入“ Services ”，“ Order new Services ”</li>
-<li>然后就看到第一个和第二个套餐，都带有“ LOS ANGELES - CHINA DIRECT ROUTE ”字样的，意思就是洛杉矶中国直连。</li>
-<li>然后就可以“ Order Now ”，下单，用支付宝付款了。</li>
-</ol>
-<h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p>无任何优化，在公司看油管4K稍有卡顿，1080P没事，速度大概8000kb的样子。</p>
+<h3 id="开始测试"><a href="#开始测试" class="headerlink" title="开始测试"></a>开始测试</h3><p><code>dig @223.5.5.5 img.alicdn.com #183.203.23.212</code><br><code>dig @180.76.76.76 img.alicdn.com #111.13.140.183</code></p>
+<blockquote>
+<p>百度的结果多个小尾巴<code>caishikou.redirect.    3600    IN    A    127.0.0.1</code></p>
+</blockquote>
+<p><code>dig @114.114.114.114 img.alicdn.com #111.32.130.114</code><br><code>dig @117.50.11.11 img.alicdn.com #111.13.140.183</code><br><code>dig @208.67.222.222 +tcp -p 443 img.alicdn.com #23.66.41.95</code></p>
+<table>
+<thead>
+<tr>
+<th>DNS名称</th>
+<th>DNS IP</th>
+<th>域名解析结果</th>
+<th>解析结果位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>移动DNS</td>
+<td>路由器IP</td>
+<td>111.13.140.183</td>
+<td>北京移动</td>
+</tr>
+<tr>
+<td>阿里DNS</td>
+<td>223.5.5.5</td>
+<td>183.203.23.212</td>
+<td>山西移动</td>
+</tr>
+<tr>
+<td>百度DNS</td>
+<td>180.76.76.76</td>
+<td>111.13.140.183</td>
+<td>北京移动</td>
+</tr>
+<tr>
+<td>114DNS</td>
+<td>114.114.114.114</td>
+<td>111.32.130.114</td>
+<td>天津移动</td>
+</tr>
+<tr>
+<td>OneDNS</td>
+<td>117.50.11.11</td>
+<td>111.13.140.183</td>
+<td>北京移动</td>
+</tr>
+<tr>
+<td>Google</td>
+<td>DNS-over-https</td>
+<td>111.13.140.183</td>
+<td>北京移动</td>
+</tr>
+<tr>
+<td>openDNS</td>
+<td>208.67.222.222</td>
+<td>23.66.41.95</td>
+<td>中国香港</td>
+</tr>
+</tbody>
+</table>
+<h3 id="测试总结"><a href="#测试总结" class="headerlink" title="测试总结"></a>测试总结</h3><ul>
+<li>移动DNS中规中矩</li>
+<li>阿里DNS很奇怪，自己的DNS，自己的CDN不应该指路到山西，难道是因为当前时间是周末，北京移动网络拥堵、服务器负载较高，多花几毫秒的网络时间换取降低更多的服务器响应时间，可能会有更好的速度？</li>
+<li>百度DNS，最后有个<code>菜市口 127.0.0.1</code>让人感觉怪怪的</li>
+<li>114DNS，支持TCP查询，安全性较高，我喜欢，虽然指路到天津移动，不差那1-2毫秒，说不定天津服务器访问少，服务器响应还更快。</li>
+<li>OneDNS会不会倒闭，不稳定？</li>
+<li>GoogleDNS 无污染劫持，解析结果也好，需要配合<a href="https://github.com/lbp0200/prc-dns" target="_blank" rel="noopener">prc-dns</a>。有条件的还是得买个<a href="https://polr.liuboping.com/9zuU9" target="_blank" rel="noopener">搬瓦工</a>、<a href="https://polr.liuboping.com/PrgTf" target="_blank" rel="noopener">Vultr</a>，自己搞，体验是完全不一样的。</li>
+<li><del>openDNS</del>不能用，打开淘宝会相当慢</li>
+</ul>
+<p>当然还有其他的DNS，例如4个1，请读者自行测试。</p>
 
             
         </div>
@@ -176,16 +238,16 @@
 <ul id="article-nav" class="nav nav-pills nav-justified">
   
   <li role="presentation">
-    <a href="/2017-01-12/京东主机.html" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018-05-19/Heroku速度快的IP.html" id="article-nav-older" class="article-nav-link-wrap">
       <i class="fa fa-chevron-left pull-left"></i>
-      <span class="article-nav-link-title">怎样通过租用京东云主机搭建一个高性能高可用的网站</span>
+      <span class="article-nav-link-title">Heroku速度快的IP</span>
     </a>
   </li>
   
   
   <li role="presentation">
-    <a href="/2017-01-16/linux发行版哪个好.html" id="article-nav-newer" class="article-nav-link-wrap">
-      <span class="article-nav-link-title">linux发行版哪个好</span>
+    <a href="/2018-05-22/分享经验-我是如何根治10年双侧鼻窦炎的.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <span class="article-nav-link-title">分享经验-我是如何根治10年双侧鼻窦炎的</span>
       <i class="fa fa-chevron-right pull-right"></i>
     </a>
   </li>

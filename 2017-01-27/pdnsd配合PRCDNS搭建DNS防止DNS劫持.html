@@ -9,25 +9,18 @@
         
         丑锉穷的博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="PRCDNS是一个Google DNS代理，使用DNS-over-HTTPS接口，保证DNS的纯洁性，同时使用TCP保证运营商不会劫持DNS结果。
-DNS解析流程客户端 =&amp;gt; pdnsd =&amp;gt; PRCDNS =&amp;gt; Google DNS 接口
-PRCDNS的搭建流程可以参考github上的文档
-pdnsd安装配置12sudo apt install pdnsdsudo vim /e">
+    <meta name="description" content="PRCDNS是一个Google DNS代理，使用DNS-over-HTTPS接口，保证DNS的纯洁性，同时使用TCP保证运营商不会劫持DNS结果。 DNS解析流程客户端 =&amp;gt; pdnsd =&amp;gt; PRCDNS =&amp;gt; Google DNS 接口 PRCDNS的搭建流程可以参考github上的文档 pdnsd安装配置12sudo apt install pdnsdsudo vim /e">
+<meta name="keywords" content="DNS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="pdnsd配合PRCDNS搭建DNS防止DNS劫持">
 <meta property="og:url" content="http://www.liuboping.com/2017-01-27/pdnsd配合PRCDNS搭建DNS防止DNS劫持.html">
 <meta property="og:site_name" content="丑锉穷的博客">
-<meta property="og:description" content="PRCDNS是一个Google DNS代理，使用DNS-over-HTTPS接口，保证DNS的纯洁性，同时使用TCP保证运营商不会劫持DNS结果。
-DNS解析流程客户端 =&amp;gt; pdnsd =&amp;gt; PRCDNS =&amp;gt; Google DNS 接口
-PRCDNS的搭建流程可以参考github上的文档
-pdnsd安装配置12sudo apt install pdnsdsudo vim /e">
+<meta property="og:description" content="PRCDNS是一个Google DNS代理，使用DNS-over-HTTPS接口，保证DNS的纯洁性，同时使用TCP保证运营商不会劫持DNS结果。 DNS解析流程客户端 =&amp;gt; pdnsd =&amp;gt; PRCDNS =&amp;gt; Google DNS 接口 PRCDNS的搭建流程可以参考github上的文档 pdnsd安装配置12sudo apt install pdnsdsudo vim /e">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2017-02-24T09:44:37.267Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="pdnsd配合PRCDNS搭建DNS防止DNS劫持">
-<meta name="twitter:description" content="PRCDNS是一个Google DNS代理，使用DNS-over-HTTPS接口，保证DNS的纯洁性，同时使用TCP保证运营商不会劫持DNS结果。
-DNS解析流程客户端 =&amp;gt; pdnsd =&amp;gt; PRCDNS =&amp;gt; Google DNS 接口
-PRCDNS的搭建流程可以参考github上的文档
-pdnsd安装配置12sudo apt install pdnsdsudo vim /e">
+<meta name="twitter:description" content="PRCDNS是一个Google DNS代理，使用DNS-over-HTTPS接口，保证DNS的纯洁性，同时使用TCP保证运营商不会劫持DNS结果。 DNS解析流程客户端 =&amp;gt; pdnsd =&amp;gt; PRCDNS =&amp;gt; Google DNS 接口 PRCDNS的搭建流程可以参考github上的文档 pdnsd安装配置12sudo apt install pdnsdsudo vim /e">
     
     
     
@@ -142,11 +135,11 @@ pdnsd安装配置12sudo apt install pdnsdsudo vim /e">
 
         <div class="article-entry" itemprop="articleBody">
             
-            <p><a href="https://github.com/lbp0200/PRCDNS" target="_blank" rel="external">PRCDNS</a>是一个Google DNS代理，使用<a href="https://developers.google.com/speed/public-dns/docs/dns-over-https" target="_blank" rel="external">DNS-over-HTTPS</a>接口，保证DNS的纯洁性，同时使用TCP保证运营商不会劫持DNS结果。</p>
+            <p><a href="https://github.com/lbp0200/PRCDNS" target="_blank" rel="noopener">PRCDNS</a>是一个Google DNS代理，使用<a href="https://developers.google.com/speed/public-dns/docs/dns-over-https" target="_blank" rel="noopener">DNS-over-HTTPS</a>接口，保证DNS的纯洁性，同时使用TCP保证运营商不会劫持DNS结果。</p>
 <h2 id="DNS解析流程"><a href="#DNS解析流程" class="headerlink" title="DNS解析流程"></a>DNS解析流程</h2><p>客户端 =&gt; pdnsd =&gt; PRCDNS =&gt; Google DNS 接口</p>
 <p>PRCDNS的搭建流程可以参考github上的文档</p>
-<h2 id="pdnsd安装配置"><a href="#pdnsd安装配置" class="headerlink" title="pdnsd安装配置"></a>pdnsd安装配置</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt install pdnsd</div><div class="line">sudo vim /etc/pdnsd.conf</div></pre></td></tr></table></figure>
-<p>配置文件参考<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">global &#123;</div><div class="line">	perm_cache=2048;</div><div class="line">	cache_dir=<span class="string">"/var/cache/pdnsd"</span>;</div><div class="line">	run_as=<span class="string">"pdnsd"</span>;</div><div class="line">	server_ip = 0.0.0.0;  // Use eth0 here <span class="keyword">if</span> you want to allow other</div><div class="line">	server_port = 53;	// machines on your network to query pdnsd.</div><div class="line">	status_ctl = on;</div><div class="line">  	paranoid=on;</div><div class="line">	query_method=tcp_only;	// pdnsd must be compiled with tcp 只用tcp协议</div><div class="line">	min_ttl=1d;       // Retain cached entries at least 15 minutes.</div><div class="line">	max_ttl=1w;	   // One week.</div><div class="line">	timeout=10;        // Global timeout option (10 seconds).</div><div class="line">	par_queries=1;  一定要加，否则会同时查询114，114会抢答查询结果</div><div class="line">&#125;</div><div class="line">server &#123;</div><div class="line">	label = <span class="string">"prcdns"</span>; //设置PRCDNS作为上游服务器</div><div class="line">	ip = 23.106.151.177;</div><div class="line">	timeout = 10;</div><div class="line">	port = 3535; </div><div class="line">&#125;</div><div class="line">server &#123;</div><div class="line">	label = <span class="string">"114dns"</span>; //备用114DNS作为上游服务器</div><div class="line">	ip = 114.114.114.114,114.114.115.115;</div><div class="line">	timeout = 10;</div><div class="line">	port = 53; </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="pdnsd安装配置"><a href="#pdnsd安装配置" class="headerlink" title="pdnsd安装配置"></a>pdnsd安装配置</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install pdnsd</span><br><span class="line">sudo vim /etc/pdnsd.conf</span><br></pre></td></tr></table></figure>
+<p>配置文件参考<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">global &#123;</span><br><span class="line">	perm_cache=2048;</span><br><span class="line">	cache_dir=<span class="string">"/var/cache/pdnsd"</span>;</span><br><span class="line">	run_as=<span class="string">"pdnsd"</span>;</span><br><span class="line">	server_ip = 0.0.0.0;  // Use eth0 here <span class="keyword">if</span> you want to allow other</span><br><span class="line">	server_port = 53;	// machines on your network to query pdnsd.</span><br><span class="line">	status_ctl = on;</span><br><span class="line">  	paranoid=on;</span><br><span class="line">	query_method=tcp_only;	// pdnsd must be compiled with tcp 只用tcp协议</span><br><span class="line">	min_ttl=1d;       // Retain cached entries at least 15 minutes.</span><br><span class="line">	max_ttl=1w;	   // One week.</span><br><span class="line">	timeout=10;        // Global timeout option (10 seconds).</span><br><span class="line">	par_queries=1;  一定要加，否则会同时查询114，114会抢答查询结果</span><br><span class="line">&#125;</span><br><span class="line">server &#123;</span><br><span class="line">	label = <span class="string">"prcdns"</span>; //设置PRCDNS作为上游服务器</span><br><span class="line">	ip = 23.106.151.177;</span><br><span class="line">	timeout = 10;</span><br><span class="line">	port = 3535; </span><br><span class="line">&#125;</span><br><span class="line">server &#123;</span><br><span class="line">	label = <span class="string">"114dns"</span>; //备用114DNS作为上游服务器</span><br><span class="line">	ip = 114.114.114.114,114.114.115.115;</span><br><span class="line">	timeout = 10;</span><br><span class="line">	port = 53; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
             
         </div>
@@ -244,7 +237,7 @@ pdnsd安装配置12sudo apt install pdnsdsudo vim /e">
   
   <div class="sidebar-module">
     <h4>归档</h4>
-    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/01/">一月 2018</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/12/">十二月 2017</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/11/">十一月 2017</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/10/">十月 2017</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/09/">九月 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/08/">八月 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/06/">六月 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/02/">二月 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/01/">一月 2017</a><span class="sidebar-module-list-count">18</span></li></ul>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/05/">五月 2018</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/01/">一月 2018</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/12/">十二月 2017</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/11/">十一月 2017</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/10/">十月 2017</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/09/">九月 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/08/">八月 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/06/">六月 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/02/">二月 2017</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/01/">一月 2017</a><span class="sidebar-module-list-count">18</span></li></ul>
   </div>
 
 
@@ -255,23 +248,23 @@ pdnsd安装配置12sudo apt install pdnsdsudo vim /e">
     <ul class="sidebar-module-list">
       
         <li>
+          <a href="/2018-05-22/分享经验-我是如何根治10年双侧鼻窦炎的.html">分享经验-我是如何根治10年双侧鼻窦炎的</a>
+        </li>
+      
+        <li>
+          <a href="/2018-05-20/DNS哪家强？测试一下.html">测试结果告诉你DNS哪家强？</a>
+        </li>
+      
+        <li>
+          <a href="/2018-05-19/Heroku速度快的IP.html">Heroku速度快的IP</a>
+        </li>
+      
+        <li>
           <a href="/2018-01-14/为什么你们家的大数据不赚钱？.html">为什么你们家的大数据不赚钱？</a>
         </li>
       
         <li>
           <a href="/2018-01-12/猪才相信“风口上的猪”.html">猪才相信“风口上的猪”</a>
-        </li>
-      
-        <li>
-          <a href="/2018-01-08/MySQL导入CSV文件数据.html">MySQL导入CSV文件数据</a>
-        </li>
-      
-        <li>
-          <a href="/2017-12-20/Python读写Excel.html">Python读写Excel</a>
-        </li>
-      
-        <li>
-          <a href="/2017-12-05/使用git自动部署项目.html">使用git自动部署项目</a>
         </li>
       
     </ul>
