@@ -7,8 +7,56 @@
     </url>
 
     <url>
+        <loc>http://www.liuboping.com/2017-01-19/%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E9%9D%9E%E5%B8%B8%E4%BE%BF%E5%AE%9C%E7%9A%84PHP-ASP-NET%E5%9B%BD%E5%86%85%E9%A6%99%E6%B8%AF%E7%BE%8E%E5%9B%BD%E8%99%9A%E6%8B%9F%E4%B8%BB%E6%9C%BA.html</loc>
+        <lastmod>2018-05-22T04:34:25.944Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.liuboping.com/2017-08-11/%E7%BE%8E%E5%9B%BD%E6%B4%9B%E6%9D%89%E7%9F%B6CN2%E7%BA%BF%E8%B7%AFVPS%E6%89%93%E6%8A%98%E4%BC%98%E6%83%A0%E4%BF%A1%E6%81%AF.html</loc>
+        <lastmod>2018-05-22T04:32:00.050Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.liuboping.com/2017-10-23/ssh%E8%B5%B0shadowsocks-r-%E9%98%B2%E6%AD%A2GFW%E5%B9%B2%E6%89%B0.html</loc>
+        <lastmod>2018-05-22T04:31:47.602Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.liuboping.com/2017-10-30/%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85SSR%E9%85%B8%E9%85%B8%E4%B9%B3%E6%9C%80%E6%96%B0%E7%89%88auth-chain-b.html</loc>
+        <lastmod>2018-05-22T04:31:37.874Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.liuboping.com/2018-05-20/DNS%E5%93%AA%E5%AE%B6%E5%BC%BA%EF%BC%9F%E6%B5%8B%E8%AF%95%E4%B8%80%E4%B8%8B.html</loc>
+        <lastmod>2018-05-22T04:31:22.822Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://www.liuboping.com/2018-05-22/%E5%BC%80%E5%90%AFTCP-BBR%E6%8B%A5%E5%A1%9E%E6%8E%A7%E5%88%B6%E7%AE%97%E6%B3%95.html</loc>
-        <lastmod>2018-05-22T04:07:48.326Z</lastmod>
+        <lastmod>2018-05-22T04:31:12.154Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.liuboping.com/2018-05-22/%E5%87%A0%E6%AD%A5%E6%89%BE%E5%87%BAss%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E9%80%9F%E5%BA%A6%E6%85%A2%E7%9A%84%E5%8E%9F%E5%9B%A0.html</loc>
+        <lastmod>2018-05-22T04:30:57.330Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -33,22 +81,6 @@
     <url>
         <loc>http://www.liuboping.com/2018-05-19/Heroku%E9%80%9F%E5%BA%A6%E5%BF%AB%E7%9A%84IP.html</loc>
         <lastmod>2018-05-21T01:26:53.466Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://www.liuboping.com/2018-05-20/DNS%E5%93%AA%E5%AE%B6%E5%BC%BA%EF%BC%9F%E6%B5%8B%E8%AF%95%E4%B8%80%E4%B8%8B.html</loc>
-        <lastmod>2018-05-21T01:26:53.466Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://www.liuboping.com/2017-10-30/%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85SSR%E9%85%B8%E9%85%B8%E4%B9%B3%E6%9C%80%E6%96%B0%E7%89%88auth-chain-b.html</loc>
-        <lastmod>2018-05-10T01:35:43.207Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -127,14 +159,6 @@
     </url>
 
     <url>
-        <loc>http://www.liuboping.com/2017-10-23/ssh%E8%B5%B0shadowsocks-r-%E9%98%B2%E6%AD%A2GFW%E5%B9%B2%E6%89%B0.html</loc>
-        <lastmod>2017-10-23T03:09:36.203Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>http://www.liuboping.com/2017-10-18/%E5%91%A8%E6%98%93%E7%AE%97%E5%87%BA%E9%80%83%E8%AF%BE%E5%AD%A6%E7%94%9F.html</loc>
         <lastmod>2017-10-18T05:26:26.550Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -145,14 +169,6 @@
     <url>
         <loc>http://www.liuboping.com/2017-09-08/PHP%E6%9C%80%E6%B5%81%E8%A1%8C%E7%9A%84%E6%A1%86%E6%9E%B6%E6%8E%92%E8%A1%8C.html</loc>
         <lastmod>2017-09-08T07:00:40.944Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://www.liuboping.com/2017-08-11/%E7%BE%8E%E5%9B%BD%E6%B4%9B%E6%9D%89%E7%9F%B6CN2%E7%BA%BF%E8%B7%AFVPS%E6%89%93%E6%8A%98%E4%BC%98%E6%83%A0%E4%BF%A1%E6%81%AF.html</loc>
-        <lastmod>2017-08-11T10:45:09.380Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -289,14 +305,6 @@
     <url>
         <loc>http://www.liuboping.com/2017-01-20/%E6%8B%BC%E4%BA%86%EF%BC%81%E6%9D%8E%E5%BD%A6%E5%AE%8F%E4%B8%BA%E4%BA%86%E7%BB%99%E7%99%BE%E5%BA%A6%E6%89%93%E5%B9%BF%E5%91%8A-%E6%8A%8A%E5%A5%B3%E5%84%BF%E9%83%BD%E6%8E%A8%E5%87%BA%E6%9D%A5%E4%BA%86.html</loc>
         <lastmod>2017-01-20T04:01:53.257Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://www.liuboping.com/2017-01-19/%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E9%9D%9E%E5%B8%B8%E4%BE%BF%E5%AE%9C%E7%9A%84PHP-ASP-NET%E5%9B%BD%E5%86%85%E9%A6%99%E6%B8%AF%E7%BE%8E%E5%9B%BD%E8%99%9A%E6%8B%9F%E4%B8%BB%E6%9C%BA.html</loc>
-        <lastmod>2017-01-20T01:45:36.359Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
