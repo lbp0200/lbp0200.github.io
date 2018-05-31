@@ -16,13 +16,6 @@
     </url>
 
     <url>
-        <loc>http://www.liuboping.com/tags/%E6%94%92%E6%9C%BA/</loc>
-        <lastmod>2017-02-03T01:24:58.512Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://www.liuboping.com/tags/%E5%8F%8C%E7%BA%BF%E4%B8%BB%E6%9C%BA/</loc>
         <lastmod>2017-02-07T02:14:10.594Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -39,13 +32,6 @@
     <url>
         <loc>http://www.liuboping.com/tags/%E4%B8%BB%E6%9C%BA%E9%85%8D%E7%BD%AE/</loc>
         <lastmod>2017-02-10T05:36:39.799Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://www.liuboping.com/tags/VPS/</loc>
-        <lastmod>2017-02-21T09:46:49.315Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -102,6 +88,20 @@
     <url>
         <loc>http://www.liuboping.com/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/</loc>
         <lastmod>2018-05-22T04:32:00.050Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.liuboping.com/tags/%E6%94%92%E6%9C%BA/</loc>
+        <lastmod>2018-05-28T03:49:36.491Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.liuboping.com/tags/VPS/</loc>
+        <lastmod>2018-05-28T03:49:36.491Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
